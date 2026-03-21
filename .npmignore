@@ -1,0 +1,18 @@
+# Development artifacts — not needed in npm package
+.agent/
+superpowers/
+docs/
+scripts/
+.git/
+.gitignore
+.gitattributes
+antigravity_agent_summary.md
+
+# Test artifacts
+/tmp/
+*.test.js
+
+# Editors & OS
+.DS_Store
+*.swp
+*.swo
