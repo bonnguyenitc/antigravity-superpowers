@@ -31,12 +31,14 @@ echo ""
 echo "📤 Publishing agy-superpowers@$NEW_VERSION to npm..."
 npm publish --access public
 
-# Commit + tag + push
+# Commit + tag (NO auto-push — run git push manually when ready)
 git add package.json
 git commit -m "chore: publish agy-superpowers@$NEW_VERSION"
 git tag "v$NEW_VERSION"
-git push origin main --tags
 
 echo ""
 echo "✅ Done! agy-superpowers@$NEW_VERSION published and tagged."
 echo "🔗 https://www.npmjs.com/package/agy-superpowers"
+echo ""
+echo "👉 Push when ready:"
+echo "   git push origin main --tags"

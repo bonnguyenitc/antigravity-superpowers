@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // bin/init.js
-// Usage: npx antigravity-superpowers init
+// Usage: npx agy-superpowers init
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,8 +15,8 @@ const command = args[0];
 if (command !== 'init') {
   console.error(`❌ Unknown command: ${command || '(none)'}`);
   console.error('');
-  console.error('Usage: npx antigravity-superpowers init');
-  console.error('       npx antigravity-superpowers init --force   # overwrite existing .agent/');
+  console.error('Usage: npx agy-superpowers init');
+  console.error('       npx agy-superpowers init --force   # overwrite existing .agent/');
   process.exit(1);
 }
 
@@ -47,7 +47,7 @@ if (fs.existsSync(TARGET_DIR)) {
   console.log('🗑  Removed existing .agent/');
 }
 
-console.log('🚀 Initialising antigravity-superpowers…');
+console.log('🚀 Initialising agy-superpowers…');
 copyDir(TEMPLATE_DIR, TARGET_DIR);
 console.log('✅ .agent/ created successfully!\n');
 console.log('📖 Next steps:');
