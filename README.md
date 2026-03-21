@@ -130,6 +130,29 @@ This workflow will:
 
 ---
 
+## Configuration
+
+Per-project settings live in `.agent/config.yml`. Create or edit this file in your project's `.agent/` folder:
+
+```yaml
+# .agent/config.yml
+
+# auto_commit: true | false
+# When true (default), Superpowers skills automatically commit after completing
+# tasks and writing design docs.
+# When false, all git commits and staging are skipped — files are left as
+# modified for you to commit manually.
+auto_commit: true
+```
+
+| Setting | Default | Description |
+|---|---|---|
+| `auto_commit` | `true` | AI auto-commits after tasks and design docs. Set to `false` to skip all commits. |
+
+This file is preserved across `/update-superpowers` runs.
+
+---
+
 ## Installation
 
 ### Using This Repo in Your Project
