@@ -13,7 +13,9 @@ const ROOT = path.resolve(__dirname, '..');
 const SKILLS_DIR = path.join(ROOT, '.agent', 'skills');
 const SUPERPOWERS_SKILLS = path.join(ROOT, 'superpowers', 'skills');
 
-// --- Step 1: Break symlinks, copy real files ---
+// --- Step 1: Always copy fresh from superpowers/skills/ → .agent/skills/ ---
+// Works whether .agent/skills/* are symlinks (first run) or real dirs (subsequent runs).
+// superpowers/ is always safe — never modified here.
 
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
@@ -30,17 +32,27 @@ function copyDir(src, dest) {
   }
 }
 
-console.log('🔗 Breaking symlinks in .agent/skills/ → copying real files…');
-
-for (const entry of fs.readdirSync(SKILLS_DIR, { withFileTypes: true })) {
-  const skillPath = path.join(SKILLS_DIR, entry.name);
-  if (entry.isSymbolicLink()) {
-    const realPath = fs.realpathSync(skillPath);
-    fs.rmSync(skillPath, { recursive: true, force: true });
-    copyDir(realPath, skillPath);
-    console.log(`  ✅ ${entry.name} (symlink → real files)`);
-  }
+if (!fs.existsSync(SUPERPOWERS_SKILLS)) {
+  console.error('❌ superpowers/skills/ not found. Run update-superpowers.sh first.');
+  process.exit(1);
 }
+
+console.log('📋 Copying fresh skills from superpowers/skills/ → .agent/skills/…');
+
+for (const entry of fs.readdirSync(SUPERPOWERS_SKILLS, { withFileTypes: true })) {
+  if (!entry.isDirectory()) continue;
+  const srcSkill = path.join(SUPERPOWERS_SKILLS, entry.name);
+  const destSkill = path.join(SKILLS_DIR, entry.name);
+  // Remove existing (symlink or real dir) and copy fresh
+  if (fs.existsSync(destSkill)) {
+    fs.rmSync(destSkill, { recursive: true, force: true });
+  }
+  copyDir(srcSkill, destSkill);
+  console.log(`  ✅ ${entry.name}`);
+}
+
+console.log(`✅ Skills refreshed from superpowers/`);
+
 
 // --- Step 2: Apply patches to remove non-Antigravity tool references ---
 
