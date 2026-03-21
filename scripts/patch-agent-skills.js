@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // scripts/patch-agent-skills.js
-// Breaks .agent/skills/* symlinks → copies real files from superpowers/skills/*.
+// Always copies fresh skills from superpowers/skills/ → .agent/skills/.
 // Then applies Antigravity-specific patches to remove non-Antigravity tool refs.
 // Run after update-superpowers to keep .agent/ self-contained and superpowers/ untouched.
 
@@ -43,7 +43,6 @@ for (const entry of fs.readdirSync(SUPERPOWERS_SKILLS, { withFileTypes: true }))
   if (!entry.isDirectory()) continue;
   const srcSkill = path.join(SUPERPOWERS_SKILLS, entry.name);
   const destSkill = path.join(SKILLS_DIR, entry.name);
-  // Remove existing (symlink or real dir) and copy fresh
   if (fs.existsSync(destSkill)) {
     fs.rmSync(destSkill, { recursive: true, force: true });
   }
@@ -51,8 +50,7 @@ for (const entry of fs.readdirSync(SUPERPOWERS_SKILLS, { withFileTypes: true }))
   console.log(`  ✅ ${entry.name}`);
 }
 
-console.log(`✅ Skills refreshed from superpowers/`);
-
+console.log('✅ Skills refreshed from superpowers/');
 
 // --- Step 2: Apply patches to remove non-Antigravity tool references ---
 
@@ -84,10 +82,10 @@ deleteFile('using-superpowers/references/codex-tools.md');
 // Delete Gemini CLI tool mapping (Gemini CLI ≠ Antigravity)
 deleteFile('using-superpowers/references/gemini-tools.md');
 
-// Write Antigravity tool mapping (not in upstream — create here)
+// Write Antigravity tool mapping (not in upstream — created here each run)
 const antigravityToolsContent = `# Antigravity Tool Mapping
 
-Skills use Claude Code tool names. When you encounter these in a skill, use your Antigravity equivalent:
+Some skills reference tool names from other platforms. Use the Antigravity equivalents below:
 
 | Skill references | Antigravity equivalent |
 |---|---|
@@ -121,7 +119,7 @@ Antigravity supports long-running background commands:
 
 ## Additional Antigravity tools
 
-These tools are available in Antigravity but have no Claude Code equivalent:
+These tools are available in Antigravity with no equivalent in other platforms:
 
 | Tool | Purpose |
 |---|---|
@@ -149,10 +147,10 @@ patchFile(path.join(SKILLS_DIR, 'using-superpowers/SKILL.md'), [
     /\*\*In Claude Code:\*\* Use the `Skill` tool\. When you invoke a skill, its content is loaded and presented to you—follow it directly\. Never use the Read tool on skill files\.\n\n\*\*In Gemini CLI:\*\* Skills activate via the `activate_skill` tool\. Gemini loads skill metadata at session start and activates the full content on demand\.\n\n\*\*In other environments:\*\* Check your platform's documentation for how skills are loaded\./,
     '**In Antigravity:** Use `view_file` on `.agent/skills/<skill-name>/SKILL.md` to read a skill. Skills are detected automatically from their `description` field.'
   ],
-  // Replace Platform Adaptation section (use dotAll to match full content)
+  // Replace Platform Adaptation section
   [
     /## Platform Adaptation\n\nSkills use Claude Code tool names\..*?\n/s,
-    '## Platform Adaptation\n\nThis package is configured for **Google Antigravity**. Tool name mappings are handled automatically via `GEMINI.md` in your workspace.\n\nSkills use Claude Code tool names internally. For the Antigravity equivalents, see `references/antigravity-tools.md`.\n'
+    '## Platform Adaptation\n\nThis package is configured for **Google Antigravity**. Tool name mappings are handled automatically via `GEMINI.md` in your workspace.\n\nFor tool name equivalents, see `references/antigravity-tools.md`.\n'
   ],
 ]);
 console.log('  ✅ Patched using-superpowers/SKILL.md');
@@ -164,7 +162,7 @@ patchFile(path.join(SKILLS_DIR, 'executing-plans/SKILL.md'), [
 ]);
 console.log('  ✅ Patched executing-plans/SKILL.md');
 
-// writing-skills/SKILL.md — personal skills path + Codex path
+// writing-skills/SKILL.md — personal skills path
 patchFile(path.join(SKILLS_DIR, 'writing-skills/SKILL.md'), [
   [/`~\/\.claude\/skills` for Claude Code, `~\/\.agents\/skills\/` for Codex/g, '`~/.agent/skills` for Antigravity'],
   [/`~\/\.claude\/skills` for Claude Code/g, '`~/.agent/skills` for Antigravity'],
@@ -172,11 +170,11 @@ patchFile(path.join(SKILLS_DIR, 'writing-skills/SKILL.md'), [
 ]);
 console.log('  ✅ Patched writing-skills/SKILL.md');
 
-// brainstorming/visual-companion.md — replace Claude Code + Gemini CLI + Codex platform blocks
+// brainstorming/visual-companion.md — replace all non-Antigravity platform blocks
 patchFile(path.join(SKILLS_DIR, 'brainstorming/visual-companion.md'), [
   // Remove Codex block
   [/\n\*\*Codex:\*\*\n```bash\n# Codex reaps background processes[\s\S]*?```\n\n/, '\n\n'],
-  // Replace Claude Code + Gemini CLI blocks with Antigravity block
+  // Replace Claude Code + Gemini CLI blocks with single Antigravity block
   [
     /\*\*Claude Code \(macOS \/ Linux\):\*\*\n```bash\n[\s\S]*?```\n\n\*\*Claude Code \(Windows\):\*\*\n```bash\n[\s\S]*?```\n[\s\S]*?\n\*\*Gemini CLI:\*\*\n```bash\n[\s\S]*?```\n/,
     '**Antigravity:**\n```bash\n# Launch the server normally\nscripts/start-server.sh --project-dir /path/to/project\n```\n'
@@ -184,7 +182,7 @@ patchFile(path.join(SKILLS_DIR, 'brainstorming/visual-companion.md'), [
 ]);
 console.log('  ✅ Patched brainstorming/visual-companion.md');
 
-// dispatching-parallel-agents/SKILL.md — remove Claude Code comment
+// dispatching-parallel-agents/SKILL.md — remove platform comment
 patchFile(path.join(SKILLS_DIR, 'dispatching-parallel-agents/SKILL.md'), [
   [/\/\/ In Claude Code \/ AI environment\n/g, ''],
 ]);

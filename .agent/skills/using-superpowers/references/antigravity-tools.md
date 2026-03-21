@@ -1,6 +1,6 @@
 # Antigravity Tool Mapping
 
-Skills use Claude Code tool names. When you encounter these in a skill, use your Antigravity equivalent:
+Some skills reference tool names from other platforms. Use the Antigravity equivalents below:
 
 | Skill references | Antigravity equivalent |
 |---|---|
@@ -34,7 +34,7 @@ Antigravity supports long-running background commands:
 
 ## Additional Antigravity tools
 
-These tools are available in Antigravity but have no Claude Code equivalent:
+These tools are available in Antigravity with no equivalent in other platforms:
 
 | Tool | Purpose |
 |---|---|
