@@ -38,7 +38,7 @@ if (fs.existsSync(TARGET_DIR)) {
   console.warn('⚠️  .agent/ already exists in this directory.');
   console.warn('   Delete it first or re-run with --force to overwrite:');
   console.warn('');
-  console.warn('   npx antigravity-superpowers init --force');
+  console.warn('   npx agy-superpowers init --force');
   console.warn('');
   if (!args.includes('--force')) {
     process.exit(1);
