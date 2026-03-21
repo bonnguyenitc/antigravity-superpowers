@@ -14,7 +14,11 @@ This workflow has two phases:
    - If clone fails → **STOP**. Report the error to the user.
    - On success the script prints `SCRIPT_DONE:<new-tag>` — note the new tag and continue.
 
-2. **Phase 2 — Update skill list in rules**
+// turbo
+2. Run the Antigravity patch script (breaks symlinks → real files, removes non-Antigravity tool refs):
+   `node scripts/patch-agent-skills.js`
+
+3. **Phase 2 — Update skill list in rules**
 
    List all skill folders now present in `.agent/skills/`.
    Open `.agent/rules/superpowers.md` and update **only the skills table**:
@@ -24,7 +28,7 @@ This workflow has two phases:
 
    If no skills were added or removed → skip, note "rules: no changes needed".
 
-3. **Phase 2 — New skills check**
+4. **Phase 2 — New skills check**
 
    For any skill in `.agent/skills/` that has no corresponding workflow in `.agent/workflows/`:
    - Read its `SKILL.md` `description` field.
@@ -32,11 +36,11 @@ This workflow has two phases:
    - Do NOT auto-create. Let the user decide.
 
 // turbo
-4. Commit all changes from Phase 2:
+5. Commit all changes from Phase 2:
    `git add .agent/ && git commit -m "chore: sync .agent/ with superpowers <new-tag>"`
    (Skip commit if nothing changed.)
 
-5. Print summary:
+6. Print summary:
    ```
    ✅ Superpowers updated: <old-tag> → <new-tag>
    📦 Skills: <old-count> → <new-count>  (+new_skill / -removed_skill)
