@@ -3,7 +3,7 @@ description: Update superpowers to the latest GitHub release and sync .agent/ fi
 ---
 
 This workflow has two phases:
-- **Phase 1 (script):** version check, clone, rebuild symlinks, copy agents with path fixes, save state
+- **Phase 1 (script):** version check, clone, rebuild symlinks, sync agents + commands→workflows with path fixes, save state
 - **Phase 2 (AI):** update the skill list in rules only — no content rewriting
 
 // turbo
@@ -41,6 +41,7 @@ This workflow has two phases:
    ✅ Superpowers updated: <old-tag> → <new-tag>
    📦 Skills: <old-count> → <new-count>  (+new_skill / -removed_skill)
    📋 Agents synced: <list>
+   🔄 Workflows synced from commands: <list or "none">
    🔄 Rules updated: <yes/no>
    ⚠️  New skills needing workflows: <list or "none">
    ```

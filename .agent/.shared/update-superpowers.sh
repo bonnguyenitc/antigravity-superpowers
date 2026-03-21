@@ -121,6 +121,34 @@ done
 
 echo "✅ Synced ${#SYNCED_AGENTS[@]} agent(s): ${SYNCED_AGENTS[*]}"
 
+# ── Sync commands → workflows: copy + fix path references ─────────────────────
+
+echo "🔄 Syncing .agent/workflows/ from superpowers/commands/..."
+
+WORKFLOWS_DIR=".agent/workflows"
+mkdir -p "$WORKFLOWS_DIR"
+
+SYNCED_WORKFLOWS=()
+for cmd_src in superpowers/commands/*.md; do
+  [[ -f "$cmd_src" ]] || continue
+  cmd_name=$(basename "$cmd_src")
+  dest="${WORKFLOWS_DIR}/${cmd_name}"
+
+  # Copy verbatim, then fix path references:
+  #   .agents/  →  .agent/
+  cp "$cmd_src" "$dest"
+  sed -i '' 's|\.agents/|.agent/|g' "$dest"
+
+  SYNCED_WORKFLOWS+=("$cmd_name")
+  echo "  ✅ ${cmd_name}"
+done
+
+if [[ ${#SYNCED_WORKFLOWS[@]} -eq 0 ]]; then
+  echo "  (no commands found in superpowers/commands/)"
+else
+  echo "✅ Synced ${#SYNCED_WORKFLOWS[@]} workflow(s): ${SYNCED_WORKFLOWS[*]}"
+fi
+
 # ── Save version state ────────────────────────────────────────────────────────
 
 echo "💾 Saving version state to ${VERSION_FILE}..."
