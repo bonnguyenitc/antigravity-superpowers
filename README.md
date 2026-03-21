@@ -14,7 +14,7 @@ This repo ports the [Superpowers](https://github.com/obra/superpowers) skills li
 Inside any project directory:
 
 ```bash
-npx antigravity-superpowers@latest init
+npx agy-superpowers@latest init
 ```
 
 This scaffolds `.agent/` with all Superpowers skills, workflows, and rules.
@@ -23,14 +23,14 @@ Open the project with **Google Antigravity** — Superpowers activates automatic
 To overwrite an existing `.agent/`:
 
 ```bash
-npx antigravity-superpowers@latest init --force
+npx agy-superpowers@latest init --force
 ```
 
 ### Option 2 — Global install
 
 ```bash
-npm install -g antigravity-superpowers
-antigravity-superpowers init
+npm install -g agy-superpowers
+agy-superpowers init
 ```
 
 ---
