@@ -2,9 +2,39 @@
 
 > **Superpowers for [Google Antigravity](https://antigravity.google)** — a complete development workflow powered by composable skills, workflows, and rules.
 
+
 This repo ports the [Superpowers](https://github.com/obra/superpowers) skills library to work natively with **Google Antigravity agent**, with Antigravity-compatible path conventions, an auto-update workflow, and curated workflow files translated from the upstream skills.
 
 ---
+
+## Quick Start
+
+### Option 1 — npx (recommended, no install needed)
+
+Inside any project directory:
+
+```bash
+npx antigravity-superpowers@latest init
+```
+
+This scaffolds `.agent/` with all Superpowers skills, workflows, and rules.
+Open the project with **Google Antigravity** — Superpowers activates automatically.
+
+To overwrite an existing `.agent/`:
+
+```bash
+npx antigravity-superpowers@latest init --force
+```
+
+### Option 2 — Global install
+
+```bash
+npm install -g antigravity-superpowers
+antigravity-superpowers init
+```
+
+---
+
 
 ## What's Inside
 
