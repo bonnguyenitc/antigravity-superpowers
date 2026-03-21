@@ -33,6 +33,8 @@ If GEMINI.md or AGENTS.md says "don't use TDD" and a skill says "always use TDD,
 
 This package is configured for **Google Antigravity**. Tool name mappings are handled automatically via `GEMINI.md` in your workspace.
 
+Skills use Claude Code tool names internally. For the Antigravity equivalents, see `references/antigravity-tools.md`.
+
 # Using Skills
 
 ## The Rule
