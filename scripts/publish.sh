@@ -35,6 +35,7 @@ npm publish --access public
 git add package.json
 git commit -m "chore: publish agy-superpowers@$NEW_VERSION"
 git tag "v$NEW_VERSION"
+git push origin main --tags
 
 echo ""
 echo "✅ Done! agy-superpowers@$NEW_VERSION published and tagged."
