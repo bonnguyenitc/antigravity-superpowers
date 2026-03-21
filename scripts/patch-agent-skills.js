@@ -152,7 +152,7 @@ patchFile(path.join(SKILLS_DIR, 'using-superpowers/SKILL.md'), [
   // Replace Platform Adaptation section (use dotAll to match full content)
   [
     /## Platform Adaptation\n\nSkills use Claude Code tool names\..*?\n/s,
-    '## Platform Adaptation\n\nThis package is configured for **Google Antigravity**. Tool name mappings are handled automatically via `GEMINI.md` in your workspace.\n'
+    '## Platform Adaptation\n\nThis package is configured for **Google Antigravity**. Tool name mappings are handled automatically via `GEMINI.md` in your workspace.\n\nSkills use Claude Code tool names internally. For the Antigravity equivalents, see `references/antigravity-tools.md`.\n'
   ],
 ]);
 console.log('  ✅ Patched using-superpowers/SKILL.md');
