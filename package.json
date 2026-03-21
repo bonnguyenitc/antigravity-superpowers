@@ -1,0 +1,36 @@
+{
+  "name": "antigravity-superpowers",
+  "version": "1.0.0",
+  "description": "Superpowers skills library for Google Antigravity agent — scaffold .agent/ with one command",
+  "type": "module",
+  "bin": {
+    "antigravity-superpowers": "./bin/init.js"
+  },
+  "files": [
+    "bin/",
+    "template/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build-template.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "antigravity",
+    "superpowers",
+    "agent",
+    "skills",
+    "workflow",
+    "ai"
+  ],
+  "author": "bonnguyenitc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bonnguyenitc/antigravity-superpowers.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
