@@ -53,33 +53,33 @@ antigravity-superpowers/
 💡 Idea → /brainstorm → /write-plan → /execute-plan → /code-review → merge
 ```
 
-| Step | Workflow | What happens |
-|---|---|---|
-| 1 | `/brainstorm` | Agent asks clarifying questions, refines your idea into a spec |
-| 2 | `/write-plan` | Spec → bite-sized tasks (2–5 min each) with exact file paths |
-| 3 | `/execute-plan` | Tasks run in batches with human checkpoints |
-| 4 | `/code-review` | Pre-review checklist, severity-based issue reporting |
-| 5 | _(auto)_ | `finishing-a-development-branch` — merge / PR / discard |
+| Step | Workflow        | What happens                                                   |
+| ---- | --------------- | -------------------------------------------------------------- |
+| 1    | `/brainstorm`   | Agent asks clarifying questions, refines your idea into a spec |
+| 2    | `/write-plan`   | Spec → bite-sized tasks (2–5 min each) with exact file paths   |
+| 3    | `/execute-plan` | Tasks run in batches with human checkpoints                    |
+| 4    | `/code-review`  | Pre-review checklist, severity-based issue reporting           |
+| 5    | _(auto)_        | `finishing-a-development-branch` — merge / PR / discard        |
 
 ---
 
 ## Skills Reference
 
-| Skill | Triggers automatically when... |
-|---|---|
-| `brainstorming` | You're adding a feature, building a component, or modifying behavior |
-| `writing-plans` | Design is approved — breaking work into tasks |
-| `executing-plans` | Running a plan step-by-step with checkpoints |
-| `subagent-driven-development` | Dispatching subagents per task with two-stage review |
-| `test-driven-development` | During ALL implementation (RED → GREEN → REFACTOR) |
-| `systematic-debugging` | Debugging any issue |
-| `verification-before-completion` | Before declaring a fix or task done |
-| `requesting-code-review` | Before submitting code for review |
-| `receiving-code-review` | Responding to review feedback |
-| `using-git-worktrees` | Starting work on a new isolated branch |
-| `finishing-a-development-branch` | When tasks are complete |
-| `dispatching-parallel-agents` | Running concurrent subagent workflows |
-| `writing-skills` | Creating a new skill |
+| Skill                            | Triggers automatically when...                                       |
+| -------------------------------- | -------------------------------------------------------------------- |
+| `brainstorming`                  | You're adding a feature, building a component, or modifying behavior |
+| `writing-plans`                  | Design is approved — breaking work into tasks                        |
+| `executing-plans`                | Running a plan step-by-step with checkpoints                         |
+| `subagent-driven-development`    | Dispatching subagents per task with two-stage review                 |
+| `test-driven-development`        | During ALL implementation (RED → GREEN → REFACTOR)                   |
+| `systematic-debugging`           | Debugging any issue                                                  |
+| `verification-before-completion` | Before declaring a fix or task done                                  |
+| `requesting-code-review`         | Before submitting code for review                                    |
+| `receiving-code-review`          | Responding to review feedback                                        |
+| `using-git-worktrees`            | Starting work on a new isolated branch                               |
+| `finishing-a-development-branch` | When tasks are complete                                              |
+| `dispatching-parallel-agents`    | Running concurrent subagent workflows                                |
+| `writing-skills`                 | Creating a new skill                                                 |
 
 ---
 
@@ -92,6 +92,7 @@ Upstream Superpowers releases are tracked automatically. To update:
 ```
 
 This workflow will:
+
 1. Pull the latest Superpowers release from GitHub
 2. Re-sync all skill symlinks
 3. AI-rewrite any changed workflows and rules to stay Antigravity-compatible
@@ -140,7 +141,7 @@ This setup enforces four core principles across every task:
 ## Credits
 
 - **[Superpowers](https://github.com/obra/superpowers)** by [Jesse Vincent](https://blog.fsck.com) & [Prime Radiant](https://primeradiant.com) — the upstream skills library this repo is built on.
-- Antigravity integration & workflow adaptation by [@thoaint](https://github.com/thoaint).
+- Antigravity integration & workflow adaptation by [@bonnguyenitc](https://github.com/bonnguyenitc).
 
 ---
 
