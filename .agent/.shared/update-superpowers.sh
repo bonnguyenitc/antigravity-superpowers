@@ -97,6 +97,30 @@ done
 
 echo "✅ Linked ${#NEW_SKILLS[@]} skills: ${NEW_SKILLS[*]}"
 
+# ── Sync agents: copy + fix path references ───────────────────────────────────
+
+echo "📋 Syncing .agent/agents/ from superpowers/agents/..."
+
+AGENTS_DIR=".agent/agents"
+mkdir -p "$AGENTS_DIR"
+
+SYNCED_AGENTS=()
+for agent_src in superpowers/agents/*.md; do
+  [[ -f "$agent_src" ]] || continue
+  agent_name=$(basename "$agent_src")
+  dest="${AGENTS_DIR}/${agent_name}"
+
+  # Copy verbatim, then fix known Antigravity path differences in-place:
+  #   .agents/  →  .agent/   (superpowers uses .agents/, Antigravity uses .agent/)
+  cp "$agent_src" "$dest"
+  sed -i '' 's|\.agents/|.agent/|g' "$dest"
+
+  SYNCED_AGENTS+=("$agent_name")
+  echo "  ✅ ${agent_name}"
+done
+
+echo "✅ Synced ${#SYNCED_AGENTS[@]} agent(s): ${SYNCED_AGENTS[*]}"
+
 # ── Save version state ────────────────────────────────────────────────────────
 
 echo "💾 Saving version state to ${VERSION_FILE}..."

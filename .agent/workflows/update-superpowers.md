@@ -1,8 +1,10 @@
 ---
-description: Update superpowers to the latest GitHub release and rewrite .agent/ files accordingly
+description: Update superpowers to the latest GitHub release and sync .agent/ files
 ---
 
-This workflow has two phases: a shell script handles the mechanical work (version check, clone, symlinks, save state), then Antigravity reads the new source and rewrites `.agent/` files intelligently.
+This workflow has two phases:
+- **Phase 1 (script):** version check, clone, rebuild symlinks, copy agents with path fixes, save state
+- **Phase 2 (AI):** update the skill list in rules only — no content rewriting
 
 // turbo
 1. Run the update script:
@@ -12,54 +14,33 @@ This workflow has two phases: a shell script handles the mechanical work (versio
    - If clone fails → **STOP**. Report the error to the user.
    - On success the script prints `SCRIPT_DONE:<new-tag>` — note the new tag and continue.
 
-2. **Phase 2 — AI Rewrite: agents**
-
-   Read: `superpowers/agents/code-reviewer.md`
-   Compare with: `.agent/agents/code-reviewer.md`
-
-   Rewrite `.agent/agents/code-reviewer.md`, adapting any Claude-Code-specific syntax
-   (`model: inherit`, `Task tool` references, etc.) to be Antigravity-compatible.
-   If no meaningful diff → skip, note "agents: no changes needed".
-
-3. **Phase 2 — AI Rewrite: core workflow skills**
-
-   For each row below: read the skill's `SKILL.md`, compare with the current workflow file.
-   Rewrite the workflow ONLY if upstream intent, checklist, or steps have changed.
-   Always preserve Antigravity-specific path corrections (`.agent/` not `.agents/`) and platform notes.
-
-   | Read this SKILL.md | Rewrite this workflow |
-   |---|---|
-   | `.agent/skills/brainstorming/SKILL.md` | `.agent/workflows/brainstorm.md` |
-   | `.agent/skills/writing-plans/SKILL.md` | `.agent/workflows/write-plan.md` |
-   | `.agent/skills/executing-plans/SKILL.md` | `.agent/workflows/execute-plan.md` |
-   | `.agent/skills/requesting-code-review/SKILL.md` | `.agent/workflows/code-review.md` |
-   | `.agent/skills/systematic-debugging/SKILL.md` | `.agent/workflows/debug.md` |
-
-4. **Phase 2 — AI Rewrite: rules**
+2. **Phase 2 — Update skill list in rules**
 
    List all skill folders now present in `.agent/skills/`.
-   Open `.agent/rules/superpowers.md` and update the skills table:
-   - Add a row for any skill not already listed.
-   - Prefix removed skills with ⚠️ and a note "(removed upstream)".
-   - Preserve all other content in the file unchanged.
+   Open `.agent/rules/superpowers.md` and update **only the skills table**:
+   - Add a row for any skill not already listed (use its SKILL.md `description` field as the "When to Use" value).
+   - Prefix any skill that no longer exists with ⚠️ and a note "(removed upstream)".
+   - Preserve all other content in the file exactly as-is.
 
-5. **Phase 2 — New skills check**
+   If no skills were added or removed → skip, note "rules: no changes needed".
 
-   For any skill present in `.agent/skills/` that has no corresponding workflow:
-   - Read its `SKILL.md` description.
-   - If it is a major standalone workflow (comparable to brainstorming or debugging in scope),
-     create a new workflow in `.agent/workflows/` following the same pattern as the others.
-   - Otherwise note it as "available skill, no dedicated workflow needed".
+3. **Phase 2 — New skills check**
+
+   For any skill in `.agent/skills/` that has no corresponding workflow in `.agent/workflows/`:
+   - Read its `SKILL.md` `description` field.
+   - Report it to the user: "New skill available: `<name>` — `<description>`. Create a workflow?"
+   - Do NOT auto-create. Let the user decide.
 
 // turbo
-6. Commit all AI rewrite changes:
+4. Commit all changes from Phase 2:
    `git add .agent/ && git commit -m "chore: sync .agent/ with superpowers <new-tag>"`
-   (Replace `<new-tag>` with the actual tag from step 1.)
+   (Skip commit if nothing changed.)
 
-7. Print a summary report in this format:
+5. Print summary:
    ```
    ✅ Superpowers updated: <old-tag> → <new-tag>
-   📦 Skills: <old-count> → <new-count>  (+added_skill / -removed_skill)
-   🔄 Rewrote: <list of .agent/ files changed>
-   ✅ Unchanged: <list of files with no diff>
+   📦 Skills: <old-count> → <new-count>  (+new_skill / -removed_skill)
+   📋 Agents synced: <list>
+   🔄 Rules updated: <yes/no>
+   ⚠️  New skills needing workflows: <list or "none">
    ```
