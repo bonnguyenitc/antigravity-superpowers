@@ -169,3 +169,26 @@ Each rule covers one specific pattern with incorrect/correct code examples.
 Read `references/react-native-rules/_sections.md` for the full index
 organized by priority (CRITICAL → LOW). Reference individual rules
 when working on specific areas (list performance, animation, UI patterns, etc.).
+
+### Granular Rules (Flutter/Dart)
+
+For Flutter projects, `references/flutter-rules/` contains 8 Dart skill
+files from [kevmoo/dash_skills](https://github.com/kevmoo/dash_skills),
+covering Dart language best practices, modern features, testing patterns,
+and package maintenance.
+
+### Granular Rules (Android)
+
+For Android projects, `references/android-rules/` contains 17 skill
+files from [awesome-android-agent-skills](https://github.com/new-silvermoon/awesome-android-agent-skills),
+covering: Clean Architecture, Compose UI/Performance/Navigation,
+ViewModel patterns, Retrofit networking, Kotlin Coroutines, Gradle
+optimization, testing, and XML-to-Compose migration.
+
+### Granular Rules (iOS/SwiftUI)
+
+For iOS projects, `references/ios-rules/` contains 19 SwiftUI reference
+files from [AvdLee/SwiftUI-Agent-Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill),
+covering: state management, view composition, performance, animations
+(basics/advanced/transitions), navigation, Swift Charts, macOS support,
+Liquid Glass (iOS 26+), and accessibility.

@@ -303,3 +303,56 @@ fastlane release # build + upload to App Store
 - Configure in Xcode → Signing & Capabilities
 - Push Notifications, In-App Purchase, iCloud, HealthKit each require specific entitlements
 - App Groups for sharing data between app and extensions (widgets, intents)
+
+---
+
+## Quick Reference — Granular Rules
+
+Individual SwiftUI reference files in `ios-rules/` with detailed patterns,
+code examples, and best practices for modern iOS/macOS development.
+
+> Source: [AvdLee/SwiftUI-Agent-Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill) — SwiftUI Expert Skill by Antoine van der Lee
+
+### State & Architecture
+
+- [state-management.md](ios-rules/state-management.md) — Property wrappers, @Observable, data flow patterns
+- [view-structure.md](ios-rules/view-structure.md) — View extraction, composition, identity stability
+
+### View Composition & Layout
+
+- [layout-best-practices.md](ios-rules/layout-best-practices.md) — Layout patterns, GeometryReader alternatives
+- [scroll-patterns.md](ios-rules/scroll-patterns.md) — ScrollViewReader, programmatic scrolling
+- [image-optimization.md](ios-rules/image-optimization.md) — AsyncImage, downsampling, caching
+
+### Performance & Lists
+
+- [performance-patterns.md](ios-rules/performance-patterns.md) — Hot-path optimizations, update control
+- [list-patterns.md](ios-rules/list-patterns.md) — ForEach identity, list performance
+
+### Animation
+
+- [animation-basics.md](ios-rules/animation-basics.md) — Core concepts, implicit/explicit, timing
+- [animation-advanced.md](ios-rules/animation-advanced.md) — Performance, interpolation, complex chains
+- [animation-transitions.md](ios-rules/animation-transitions.md) — View transitions, matchedGeometryEffect
+
+### Navigation & Sheets
+
+- [sheet-navigation-patterns.md](ios-rules/sheet-navigation-patterns.md) — Sheets, type-safe navigation state
+
+### Swift Charts
+
+- [charts.md](ios-rules/charts.md) — Marks, axes, selection, styling, Chart3D
+- [charts-accessibility.md](ios-rules/charts-accessibility.md) — Charts accessibility, fallback strategies
+
+### macOS
+
+- [macos-scenes.md](ios-rules/macos-scenes.md) — Scene lifecycle, multi-window, menu bar
+- [macos-views.md](ios-rules/macos-views.md) — macOS-specific views, platform differences
+- [macos-window-styling.md](ios-rules/macos-window-styling.md) — Window chrome, toolbar, title bar styling
+
+### Modern APIs
+
+- [liquid-glass.md](ios-rules/liquid-glass.md) — iOS 26+ glass effects, fallback patterns
+- [latest-apis.md](ios-rules/latest-apis.md) — Deprecated-to-modern migration (iOS 15–26+)
+- [accessibility-patterns.md](ios-rules/accessibility-patterns.md) — VoiceOver, Dynamic Type, traits
+

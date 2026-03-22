@@ -262,3 +262,30 @@ shorebird patch ios
 - Enable `--obfuscate --split-debug-info=symbols/` for release builds
 - Use deferred components for large features (lazy loading)
 - Audit unused packages with `dart pub outdated`
+
+---
+
+## Quick Reference — Granular Rules
+
+Individual Dart skill files in `flutter-rules/` with detailed patterns and
+best practices for the Dart language foundation that underpins Flutter development.
+
+> Source: [kevmoo/dash_skills](https://github.com/kevmoo/dash_skills) — Agent Skills for Dart & Flutter ecosystem
+
+### Dart Language & Best Practices
+
+- [dart-best-practices.md](flutter-rules/dart-best-practices.md) — Dart coding best practices
+- [dart-modern-features.md](flutter-rules/dart-modern-features.md) — Modern Dart features (patterns, records, sealed classes)
+- [dart-cli-app-best-practices.md](flutter-rules/dart-cli-app-best-practices.md) — CLI app patterns
+
+### Testing & Quality
+
+- [dart-test-fundamentals.md](flutter-rules/dart-test-fundamentals.md) — Test patterns with `package:test`
+- [dart-matcher-best-practices.md](flutter-rules/dart-matcher-best-practices.md) — Matcher expressions (expect, isA)
+- [dart-checks-migration.md](flutter-rules/dart-checks-migration.md) — Migrating from `package:matcher` to `package:checks`
+
+### Documentation & Maintenance
+
+- [dart-doc-validation.md](flutter-rules/dart-doc-validation.md) — Doc comment validation
+- [dart-package-maintenance.md](flutter-rules/dart-package-maintenance.md) — Package maintenance standards
+

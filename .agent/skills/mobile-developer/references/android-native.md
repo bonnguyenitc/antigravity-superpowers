@@ -352,3 +352,45 @@ android {
 - Remove unused resources with `shrinkResources = true`
 - Use WebP for images (30% smaller than PNG)
 - Split APKs by ABI if distributing outside Play Store
+
+---
+
+## Quick Reference — Granular Rules
+
+Individual skill files in `android-rules/` with detailed patterns, code
+examples, and audit workflows for Android/Kotlin/Compose development.
+
+> Source: [awesome-android-agent-skills](https://github.com/new-silvermoon/awesome-android-agent-skills)
+
+### Architecture & Core
+
+- [android-architecture.md](android-rules/android-architecture.md) — Clean Architecture, modularization, Hilt DI
+- [android-viewmodel.md](android-rules/android-viewmodel.md) — ViewModel + StateFlow/SharedFlow patterns
+- [android-data-layer.md](android-rules/android-data-layer.md) — Repository pattern, offline-first sync
+- [kotlin-concurrency-expert.md](android-rules/kotlin-concurrency-expert.md) — Coroutines triage & structured concurrency
+- [android-coroutines.md](android-rules/android-coroutines.md) — Coroutines patterns
+
+### Compose UI & Performance
+
+- [compose-ui.md](android-rules/compose-ui.md) — Stateless composables, state hoisting, theming
+- [compose-performance-audit.md](android-rules/compose-performance-audit.md) — Recomposition storms, unstable keys audit
+- [compose-navigation.md](android-rules/compose-navigation.md) — Type-safe navigation, deep links, nested graphs
+- [coil-compose.md](android-rules/coil-compose.md) — Coil image loading in Compose
+
+### Networking & Data
+
+- [android-retrofit.md](android-rules/android-retrofit.md) — Retrofit, OkHttp, serialization, interceptors
+- [android-accessibility.md](android-rules/android-accessibility.md) — Content descriptions, touch targets, contrast
+
+### Testing & Build
+
+- [android-testing.md](android-rules/android-testing.md) — Unit, Hilt, screenshot testing (Roborazzi)
+- [android-gradle-logic.md](android-rules/android-gradle-logic.md) — Convention plugins, version catalogs
+- [gradle-build-performance.md](android-rules/gradle-build-performance.md) — Build time optimization (12 patterns)
+- [android-emulator-skill.md](android-rules/android-emulator-skill.md) — ADB, emulator automation
+
+### Migration
+
+- [xml-to-compose-migration.md](android-rules/xml-to-compose-migration.md) — XML to Compose mapping tables
+- [rxjava-to-coroutines-migration.md](android-rules/rxjava-to-coroutines-migration.md) — RxJava to Coroutines/Flow
+
