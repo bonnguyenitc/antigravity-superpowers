@@ -157,3 +157,16 @@ Each rule covers one specific pattern with incorrect/correct code examples.
 Read `references/react-rules/_sections.md` for the full index
 organized by priority (CRITICAL → LOW). Reference individual rules
 when working on specific areas (waterfalls, bundle size, re-renders, SSR, etc.).
+
+### Granular Rules (Vue)
+
+For Vue/Nuxt projects, `references/vue-rules/` contains 44 individual
+rule files from [antfu/skills](https://github.com/antfu/skills)
+(sourced from [vuejs-ai/skills](https://github.com/vuejs-ai/skills)),
+organized into three sub-directories:
+
+- `best-practices/` — Components, reactivity, composables, performance (22 files)
+- `router/` — Vue Router guards, navigation, lifecycle gotchas (8 files)
+- `testing/` — Vitest, composable testing, Pinia setup, async patterns (11 files)
+
+Read the `_index.md` in each sub-directory for an overview.
