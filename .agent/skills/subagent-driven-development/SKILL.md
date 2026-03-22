@@ -276,6 +276,7 @@ Done!
 
 **Subagents should use:**
 - **superpowers:test-driven-development** - Subagents follow TDD for each task
+- **Domain skills matching the task context** - e.g. `mobile-developer` for React Native work, `backend-developer` for API work, `frontend-developer` for web UI. Include only the relevant SKILL.md in the implementer prompt context; load specific references on demand as the task requires them.
 
 **Alternative workflow:**
 - **superpowers:executing-plans** - Use for parallel session instead of same-session execution
