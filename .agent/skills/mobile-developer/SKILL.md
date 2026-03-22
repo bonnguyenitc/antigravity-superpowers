@@ -140,3 +140,22 @@ What are you building?
 ```
 
 Primary CTAs belong in the **bottom 40%** of the screen.
+
+---
+
+## Platform References
+
+When this skill is invoked, detect the project's platform stack and read
+the matching reference file(s) from `references/` before proceeding:
+
+| Stack indicator                       | Reference file                |
+|---------------------------------------|-------------------------------|
+| `package.json` with `react-native`    | `references/react-native.md`  |
+| `pubspec.yaml`                        | `references/flutter.md`       |
+| `*.xcodeproj` or `Package.swift`      | `references/ios-native.md`    |
+| `build.gradle.kts` or `build.gradle`  | `references/android-native.md`|
+
+If the project uses multiple stacks (e.g., React Native with native
+modules), read ALL matching references.
+
+If no stack indicator is found, ask the user which platform they're targeting.
