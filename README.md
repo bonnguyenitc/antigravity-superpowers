@@ -99,6 +99,204 @@ agy-superpowers init
 
 ---
 
+## Usage Guide
+
+### Getting Started in 5 Minutes
+
+**How it works:** Superpowers gives your agent 56 specialized skills. You don't need to remember or invoke them — the agent **automatically reads and selects the right skill** based on what you ask. Just describe what you need in natural language.
+
+#### Your First Feature: A Walkthrough
+
+Let's say you want to add dark mode to your React app. Here's what the full cycle looks like:
+
+| Step | You type | What happens |
+| ---- | -------- | ------------ |
+| 1 | `/brainstorm add dark mode to my React app` | Agent asks clarifying questions, explores approaches, and produces a design spec |
+| 2 | `/write-plan` | Spec gets converted into a task list with exact file paths and acceptance criteria |
+| 3 | `/execute-plan` | Agent implements tasks one by one, pausing for your review at checkpoints |
+| 4 | `/code-review` | Agent reviews the completed code against the plan, reports issues by severity |
+| 5 | _(automatic)_ | Agent offers to merge, create a PR, or discard the branch |
+
+That's it. Five steps from idea to merge-ready code.
+
+#### Quick Reference: The 5 Commands You'll Use Most
+
+| Command | What it does | Example |
+| ------- | ------------ | ------- |
+| `/brainstorm` | Turn a rough idea into a validated design spec | `/brainstorm add user onboarding flow` |
+| `/write-plan` | Break an approved spec into bite-sized tasks | `/write-plan` (after brainstorm) |
+| `/execute-plan` | Execute tasks with human review checkpoints | `/execute-plan` (after write-plan) |
+| `/code-review` | Review completed work before merging | `/code-review` |
+| `/debug` | Systematic 4-phase debugging for any issue | `/debug users can't log in on Safari` |
+
+---
+
+### Beyond Code — Skills That Work For You
+
+The agent doesn't just write code — it has specialized knowledge in marketing, pricing, security, legal, and more. When you mention a topic, the relevant skill activates automatically.
+
+#### 🔧 Development Workflow
+
+These are triggered via slash commands or activate automatically during the dev loop:
+
+| Skill | When it activates |
+| ----- | ----------------- |
+| `brainstorming` | Adding a feature, building a component, or modifying behavior |
+| `writing-plans` | Design is approved — breaking work into tasks |
+| `executing-plans` | Running a plan step-by-step with checkpoints |
+| `test-driven-development` | Implementing any feature or bugfix |
+| `systematic-debugging` | Debugging any issue |
+| `verification-before-completion` | Before declaring a fix or task done |
+| `requesting-code-review` | Completing tasks or before merging |
+| `receiving-code-review` | Receiving code review feedback |
+| `finishing-a-development-branch` | Implementation is complete — merge / PR / discard |
+| `using-git-worktrees` | Starting work on an isolated branch |
+| `dispatching-parallel-agents` | 2+ independent tasks that can run in parallel |
+| `subagent-driven-development` | Executing plan tasks in the current session |
+
+#### 💻 Technical Skills
+
+Activate when you work on specific technical domains:
+
+| Skill | When it activates |
+| ----- | ----------------- |
+| `backend-developer` | Designing APIs, server-side logic, database schemas |
+| `frontend-developer` | Building web UI, component architecture |
+| `mobile-developer` | Mobile app features, React Native / Flutter / iOS / Android |
+| `game-developer` | Game app features, game code, game architecture |
+| `api-design` | REST or GraphQL APIs, versioning, rate limiting, pagination |
+| `real-time-features` | WebSockets, SSE, live collaboration, real-time notifications |
+| `auth-and-identity` | Authentication, authorization, SSO, RBAC |
+| `devops-engineer` | CI/CD, infrastructure, deployment, monitoring |
+| `security-engineer` | App security, user data handling, GDPR/App Store compliance |
+| `email-infrastructure` | Transactional email, deliverability, SPF/DKIM/DMARC |
+| `saas-architect` | Multi-tenant SaaS architecture, tenant isolation |
+| `chrome-extension-developer` | Chrome extensions, browser-based tools |
+
+> **Example prompt:** _"Design a REST API for user management with rate limiting and pagination"_ → activates `api-design` + `backend-developer`
+
+#### 🎨 Product & Design
+
+| Skill | When it activates |
+| ----- | ----------------- |
+| `product-manager` | Defining requirements, prioritizing features, planning roadmaps |
+| `ux-designer` | Designing UI, wireframes, user research, information architecture |
+| `cto-architect` | System design decisions, tech debt, planning for scale |
+| `i18n-localization` | Internationalization, localizing for new markets |
+| `game-design` | Game mechanics, core loops, progression, difficulty curves |
+
+> **Example prompt:** _"Help me prioritize features for the next sprint based on user feedback"_ → activates `product-manager`
+
+#### 📈 Marketing & Growth
+
+| Skill | When it activates |
+| ----- | ----------------- |
+| `growth-hacker` | User acquisition, viral loops, activation funnels |
+| `content-marketer` | Content strategy, SEO content, social media, newsletters |
+| `seo-specialist` | Technical SEO, keyword research, on-page optimization |
+| `conversion-optimizer` | Landing pages, trial-to-paid funnels, paywall design |
+| `copywriter` | Landing page copy, app store descriptions, email sequences |
+| `community-manager` | Discord, Reddit, Slack communities, engagement strategy |
+| `influencer-marketer` | UGC campaigns, creator partnerships, TikTok/YouTube marketing |
+| `paid-acquisition-specialist` | Meta Ads, Google Ads, Apple Search Ads, ROAS optimization |
+| `launch-strategist` | Product launch, go-to-market, pre-launch campaigns |
+| `landing-page-builder` | Landing pages, waitlist pages, marketing sites |
+| `app-store-optimizer` | App Store / Google Play listing optimization, keyword strategy |
+
+> **Example prompt:** _"Write an ASO-optimized App Store description for my meditation app"_ → activates `app-store-optimizer` + `copywriter`
+
+#### 💰 Revenue & Operations
+
+| Skill | When it activates |
+| ----- | ----------------- |
+| `monetization-strategist` | Pricing models, freemium strategy, IAP, unit economics |
+| `pricing-psychologist` | Pricing, paywalls, free-to-paid conversion |
+| `subscription-billing` | Stripe integration, webhooks, trial logic, dunning flows |
+| `bootstrapper-finance` | MRR tracking, runway calculation, financial decisions |
+| `solo-founder-ops` | Time management, feature prioritization, running multiple products |
+| `analytics-setup` | Analytics, tracking tools, metrics dashboards |
+| `customer-success-manager` | User support, feedback loops, NPS/CSAT, churn |
+| `data-analyst` | Metrics frameworks, funnel analysis, cohort analysis, A/B tests |
+| `indie-legal` | Privacy policies, terms of service, GDPR/CCPA |
+
+> **Example prompt:** _"Should I charge $9/mo or $29/mo for my SaaS? Here's my target audience..."_ → activates `pricing-psychologist` + `monetization-strategist`
+
+#### 🚀 Validate & Scale
+
+| Skill | When it activates |
+| ----- | ----------------- |
+| `idea-validator` | Evaluating a product idea, assessing market fit before building |
+| `market-researcher` | Finding a niche, analyzing market size, customer discovery |
+| `ai-integrated-product` | Integrating AI/LLM capabilities, building AI-powered features |
+| `micro-saas-builder` | Building a micro-SaaS, choosing a niche SaaS idea |
+
+> **Example prompt:** _"I have an idea for an AI writing tool — is it worth building?"_ → activates `idea-validator` + `market-researcher`
+
+---
+
+### Power User Tips
+
+#### When to `/brainstorm` vs Just Ask
+
+| Situation | What to do |
+| --------- | ---------- |
+| Multi-file feature, new component, architectural change | `/brainstorm` → full design cycle |
+| Quick fix, rename, typo, single-line change | Just ask directly |
+| Knowledge question ("What's the best auth library?") | Just ask directly |
+| Not sure about scope | Start with `/brainstorm` — it's safe to exit early |
+
+**Rule of thumb:** if it touches more than one file or involves design tradeoffs → `/brainstorm`.
+
+#### How to Write Better Prompts
+
+- **Provide context** — mention your tech stack, project name, and constraints: _"In my Next.js app with Supabase auth..."_
+- **State goals, not solutions** — _"Users drop off during signup"_ gives the agent room to find the best fix, vs _"Add a progress bar to the signup form"_
+- **Mention specific domains** to activate the right skills — _"Review the **security** of my auth flow"_ triggers `security-engineer`, _"Optimize the **SEO** for my landing page"_ triggers `seo-specialist`
+
+#### Combining Workflows for Complex Projects
+
+**Full product launch cycle:**
+```
+/brainstorm → /write-plan → /execute-plan → /code-review
+    ↓ then in separate conversations:
+    "Write marketing copy for..." → copywriter skill
+    "Optimize my App Store listing..." → ASO skill
+    "Design a pricing strategy..." → pricing skill
+```
+
+**Idea → Validation → Build:**
+```
+"I have an idea for X, is it viable?" → idea-validator
+"Research the market for X" → market-researcher
+/brainstorm → /write-plan → /execute-plan → build it
+```
+
+**Debugging effectively:**
+```
+/debug → systematic investigation
+    ↓ if architectural issue found:
+/brainstorm → redesign the component
+```
+
+#### Configuration
+
+Per-project settings live in `.agent/config.yml`:
+
+- Set `auto_commit: false` when you want full control over your git history
+- This file is preserved across `/update-superpowers` runs — your settings won't be overwritten
+
+#### Common Pitfalls
+
+| ❌ Don't | ✅ Do instead |
+| -------- | ------------- |
+| Skip `/brainstorm` for large features | Always brainstorm features that touch multiple files |
+| Cram multiple goals into one prompt | One conversation = one clear objective |
+| Jump to `/execute-plan` without reviewing the spec | Review and approve the design spec before execution |
+| Skip `/code-review` before merging | Always review before merge — catch bugs early |
+| Assume the agent only writes code | Ask about pricing, marketing, legal — it has skills for those too |
+
+---
+
 ## AI-Driven Skill Patching
 
 Skills are sourced from upstream Superpowers but automatically patched to be Antigravity-native. The patching system uses a human-readable spec at `.agent/patches/skills-patches.md` which the AI interprets semantically — making patches resilient to upstream changes.
