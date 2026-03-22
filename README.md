@@ -42,39 +42,31 @@ agy-superpowers init
 ## What's Inside
 
 ```
-antigravity-superpowers/
-├── .agent/
-│   ├── rules/
-│   │   └── superpowers.md          # Always-on rule: agent checks skills before acting
-│   ├── skills/                     # 44 skills (patched from upstream)
-│   │   ├── brainstorming/
-│   │   ├── writing-plans/
-│   │   ├── executing-plans/
-│   │   ├── backend-developer/
-│   │   ├── frontend-developer/
-│   │   ├── mobile-developer/
-│   │   ├── growth-hacker/
-│   │   ├── monetization-strategist/
-│   │   └── ...                     # + 36 more skills
-│   ├── workflows/
-│   │   ├── brainstorm.md           # /brainstorm
-│   │   ├── write-plan.md           # /write-plan
-│   │   ├── execute-plan.md         # /execute-plan
-│   │   ├── code-review.md          # /code-review
-│   │   ├── debug.md                # /debug
-│   │   ├── publish.md              # /publish
-│   │   └── update-superpowers.md   # /update-superpowers
-│   ├── patches/
-│   │   └── skills-patches.md       # AI-driven skill patches (see below)
-│   └── .shared/
-│       └── update-superpowers.sh   # Shell script for version management
-├── bin/
-│   └── init.js                     # npx entry point
-├── scripts/
-│   └── build-template.js           # Builds publishable template from .agent/
-├── template/                       # Pre-built .agent/ for npm distribution
-└── superpowers/                    # Upstream source (git-managed)
-    └── skills/                     # Original skill SKILL.md files
+.agent/
+├── rules/
+│   └── superpowers.md          # Always-on rule: agent checks skills before acting
+├── skills/                     # 44 skills (patched from upstream)
+│   ├── brainstorming/
+│   ├── writing-plans/
+│   ├── executing-plans/
+│   ├── backend-developer/
+│   ├── frontend-developer/
+│   ├── mobile-developer/
+│   ├── growth-hacker/
+│   ├── monetization-strategist/
+│   └── ...                     # + 36 more skills
+├── workflows/
+│   ├── brainstorm.md           # /brainstorm
+│   ├── write-plan.md           # /write-plan
+│   ├── execute-plan.md         # /execute-plan
+│   ├── code-review.md          # /code-review
+│   ├── debug.md                # /debug
+│   ├── publish.md              # /publish
+│   └── update-superpowers.md   # /update-superpowers
+├── patches/
+│   └── skills-patches.md       # AI-driven skill patches (see below)
+└── .shared/
+    └── update-superpowers.sh   # Shell script for version management
 ```
 
 ---
