@@ -271,3 +271,75 @@ eas update --branch production --message "Fix login bug"
 - Tree-shake unused code with Metro bundler
 - Use `expo-asset` for preloading critical assets
 - Audit dependencies with `npx expo-doctor`
+
+---
+
+## Quick Reference — Granular Rules
+
+Individual rule files in `react-native-rules/` with detailed incorrect/correct
+code examples. Read the specific rule when working in that area.
+
+> Source: [Vercel agent-skills](https://github.com/vercel-labs/agent-skills/tree/main/skills/react-native-skills)
+
+### CRITICAL — Core Rendering
+
+- [rendering-text-in-text-component.md](react-native-rules/rendering-text-in-text-component.md) — All text must be inside `<Text>`
+- [rendering-no-falsy-and.md](react-native-rules/rendering-no-falsy-and.md) — Avoid falsy `&&` rendering
+
+### HIGH — List Performance
+
+- [list-performance-virtualize.md](react-native-rules/list-performance-virtualize.md) — Always use LegendList/FlashList
+- [list-performance-function-references.md](react-native-rules/list-performance-function-references.md) — Stable object references
+- [list-performance-item-memo.md](react-native-rules/list-performance-item-memo.md) — Pass primitives for memo
+- [list-performance-callbacks.md](react-native-rules/list-performance-callbacks.md) — Hoist callbacks
+- [list-performance-inline-objects.md](react-native-rules/list-performance-inline-objects.md) — No inline objects
+- [list-performance-images.md](react-native-rules/list-performance-images.md) — Compressed images in lists
+- [list-performance-item-types.md](react-native-rules/list-performance-item-types.md) — Item types for recycling
+- [list-performance-item-expensive.md](react-native-rules/list-performance-item-expensive.md) — Defer expensive items
+
+### HIGH — Animation
+
+- [animation-gpu-properties.md](react-native-rules/animation-gpu-properties.md) — GPU-only properties (transform, opacity)
+- [animation-derived-value.md](react-native-rules/animation-derived-value.md) — useDerivedValue over useAnimatedReaction
+- [animation-gesture-detector-press.md](react-native-rules/animation-gesture-detector-press.md) — GestureDetector for press animations
+
+### HIGH — Scroll & Navigation
+
+- [scroll-position-no-state.md](react-native-rules/scroll-position-no-state.md) — Never track scroll in useState
+- [navigation-native-navigators.md](react-native-rules/navigation-native-navigators.md) — Native stack/tab navigators
+
+### MEDIUM — React State
+
+- [react-state-minimize.md](react-native-rules/react-state-minimize.md) — Minimize state, derive values
+- [react-state-dispatcher.md](react-native-rules/react-state-dispatcher.md) — Dispatch pattern for state
+- [react-state-fallback.md](react-native-rules/react-state-fallback.md) — Fallback rendering pattern
+- [state-ground-truth.md](react-native-rules/state-ground-truth.md) — State ground truth principles
+
+### MEDIUM — React Compiler
+
+- [react-compiler-destructure-functions.md](react-native-rules/react-compiler-destructure-functions.md) — Destructure functions early
+- [react-compiler-reanimated-shared-values.md](react-native-rules/react-compiler-reanimated-shared-values.md) — .get()/.set() for shared values
+
+### MEDIUM — UI Patterns
+
+- [ui-expo-image.md](react-native-rules/ui-expo-image.md) — Use expo-image
+- [ui-pressable.md](react-native-rules/ui-pressable.md) — Pressable over TouchableOpacity
+- [ui-native-modals.md](react-native-rules/ui-native-modals.md) — Native modal presentations
+- [ui-menus.md](react-native-rules/ui-menus.md) — Native context/dropdown menus (zeego)
+- [ui-image-gallery.md](react-native-rules/ui-image-gallery.md) — Native image gallery (galeria)
+- [ui-measure-views.md](react-native-rules/ui-measure-views.md) — Measure views correctly
+- [ui-safe-area-scroll.md](react-native-rules/ui-safe-area-scroll.md) — Safe area with scroll
+- [ui-scrollview-content-inset.md](react-native-rules/ui-scrollview-content-inset.md) — ScrollView content inset
+- [ui-styling.md](react-native-rules/ui-styling.md) — Modern styling patterns (gap, boxShadow, borderCurve)
+
+### MEDIUM — Design System
+
+- [design-system-compound-components.md](react-native-rules/design-system-compound-components.md) — Compound component pattern
+
+### LOW — Monorepo, Dependencies, JS, Fonts
+
+- [monorepo-native-deps-in-app.md](react-native-rules/monorepo-native-deps-in-app.md) — Native deps in app package
+- [monorepo-single-dependency-versions.md](react-native-rules/monorepo-single-dependency-versions.md) — Single dependency versions
+- [imports-design-system-folder.md](react-native-rules/imports-design-system-folder.md) — Re-export third-party deps
+- [js-hoist-intl.md](react-native-rules/js-hoist-intl.md) — Hoist Intl formatters
+- [fonts-config-plugin.md](react-native-rules/fonts-config-plugin.md) — Config plugin for fonts

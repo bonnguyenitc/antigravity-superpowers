@@ -159,3 +159,13 @@ If the project uses multiple stacks (e.g., React Native with native
 modules), read ALL matching references.
 
 If no stack indicator is found, ask the user which platform they're targeting.
+
+### Granular Rules (React Native)
+
+For React Native projects, `references/react-native-rules/` contains 36
+individual rule files from [Vercel's agent-skills](https://github.com/vercel-labs/agent-skills).
+Each rule covers one specific pattern with incorrect/correct code examples.
+
+Read `references/react-native-rules/_sections.md` for the full index
+organized by priority (CRITICAL → LOW). Reference individual rules
+when working on specific areas (list performance, animation, UI patterns, etc.).

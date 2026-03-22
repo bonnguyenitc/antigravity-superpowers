@@ -131,3 +131,29 @@ Too many re-renders → React DevTools Profiler → memo, useMemo, useCallback
 Slow data fetch    → Parallel with Promise.all(), SWR/React Query for cache
 Large images       → WebP format, srcset for responsive, lazy loading
 ```
+
+---
+
+## Platform References
+
+When this skill is invoked, detect the project's framework and read
+the matching reference file(s) from `references/` before proceeding:
+
+| Stack indicator                         | Reference file                  |
+|-----------------------------------------|---------------------------------|
+| `next.config.js/ts` or `react` in deps  | `references/react-nextjs.md`    |
+| `nuxt.config.ts` or `vue` in deps       | `references/vue-nuxt.md`        |
+| `svelte.config.js` or `svelte` in deps  | `references/svelte-sveltekit.md`|
+| No framework deps / plain HTML          | `references/vanilla.md`         |
+
+If the stack is unclear, ask the user which framework they're using.
+
+### Granular Rules (React)
+
+For React/Next.js projects, `references/react-rules/` contains 66
+individual rule files from [Vercel's agent-skills](https://github.com/vercel-labs/agent-skills).
+Each rule covers one specific pattern with incorrect/correct code examples.
+
+Read `references/react-rules/_sections.md` for the full index
+organized by priority (CRITICAL → LOW). Reference individual rules
+when working on specific areas (waterfalls, bundle size, re-renders, SSR, etc.).
