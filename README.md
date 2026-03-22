@@ -45,7 +45,7 @@ agy-superpowers init
 .agent/
 ├── rules/
 │   └── superpowers.md          # Always-on rule: agent checks skills before acting
-├── skills/                     # 44 skills (patched from upstream)
+├── skills/                     # 56 skills (patched from upstream + 12 indie hacker skills)
 │   ├── brainstorming/
 │   ├── writing-plans/
 │   ├── executing-plans/
@@ -54,7 +54,7 @@ agy-superpowers init
 │   ├── mobile-developer/
 │   ├── growth-hacker/
 │   ├── monetization-strategist/
-│   └── ...                     # + 36 more skills
+│   └── ...                     # + 48 more skills
 ├── workflows/
 │   ├── brainstorm.md           # /brainstorm
 │   ├── write-plan.md           # /write-plan
@@ -114,11 +114,15 @@ When you run `/update-superpowers`, skills are:
 
 | Skill | Triggers automatically when... |
 | ----- | ------------------------------ |
+| `ai-integrated-product` | Integrating AI/LLM capabilities into a product, building AI-powered features |
+| `analytics-setup` | Setting up analytics, choosing tracking tools, or designing a metrics dashboard for an indie product |
 | `api-design` | Designing REST or GraphQL APIs, versioning, rate limiting, pagination, or API docs |
 | `app-store-optimizer` | Working on App Store / Google Play listing optimization, keyword strategy, or A/B testing |
 | `auth-and-identity` | Implementing authentication, authorization, SSO/SAML/OIDC, session management, or RBAC |
 | `backend-developer` | Designing APIs, server-side logic, database schemas, or reviewing backend code |
+| `bootstrapper-finance` | Tracking MRR, calculating runway, making financial decisions for a solo/bootstrapped business |
 | `brainstorming` | Adding a feature, building a component, or modifying behavior |
+| `chrome-extension-developer` | Building a Chrome extension, browser extension, or browser-based tool |
 | `community-manager` | Building and managing communities on Discord, Reddit, Slack, or social platforms |
 | `content-marketer` | Planning content strategy, SEO content, social media, or email newsletters |
 | `conversion-optimizer` | Optimizing landing pages, trial-to-paid funnels, paywall design, or onboarding flows |
@@ -136,10 +140,17 @@ When you run `/update-superpowers`, skills are:
 | `game-developer` | Working on game app features, reviewing game code, or game architecture decisions |
 | `growth-hacker` | Planning user acquisition, viral loops, activation funnels, or growth experiments |
 | `i18n-localization` | Planning i18n architecture, localizing for new markets, or managing translations |
+| `idea-validator` | Starting a new project, evaluating a product idea, or assessing market fit before building |
+| `indie-legal` | Creating privacy policies, terms of service, handling GDPR/CCPA basics, or understanding legal requirements |
 | `influencer-marketer` | Planning UGC campaigns, creator partnerships, TikTok/YouTube/Instagram marketing |
+| `landing-page-builder` | Creating a landing page, waitlist page, product page, or marketing site |
+| `launch-strategist` | Preparing to launch a product, planning go-to-market, or running a pre-launch campaign |
+| `market-researcher` | Finding a niche, analyzing market size, researching customer segments, or doing customer discovery |
+| `micro-saas-builder` | Building a micro-SaaS product, choosing a niche SaaS idea, or designing a small scalable SaaS |
 | `mobile-developer` | Working on mobile app features, reviewing mobile code, or mobile architecture |
 | `monetization-strategist` | Designing pricing models, freemium strategy, IAP, or modeling unit economics |
 | `paid-acquisition-specialist` | Running Meta Ads, Google Ads, Apple Search Ads, or any paid acquisition channel |
+| `pricing-psychologist` | Designing pricing, paywalls, free-to-paid conversion, or optimizing upgrade flows |
 | `product-manager` | Defining requirements, prioritizing features, planning roadmaps, or validating problems |
 | `real-time-features` | Implementing WebSockets, SSE, live collaboration, or real-time notifications |
 | `receiving-code-review` | Receiving code review feedback, before implementing suggestions |
@@ -148,6 +159,7 @@ When you run `/update-superpowers`, skills are:
 | `saas-architect` | Designing multi-tenant SaaS architecture, tenant isolation, or data models |
 | `security-engineer` | Reviewing app security, handling user data, ensuring GDPR/App Store compliance |
 | `seo-specialist` | Working on technical SEO, keyword research, on-page optimization, or backlink strategy |
+| `solo-founder-ops` | Managing time, prioritizing features, or running multiple products as a solo founder |
 | `subagent-driven-development` | Executing implementation plans with independent tasks in the current session |
 | `subscription-billing` | Integrating subscription billing, Stripe webhooks, trial logic, or dunning flows |
 | `systematic-debugging` | Debugging any issue |
@@ -158,6 +170,19 @@ When you run `/update-superpowers`, skills are:
 | `verification-before-completion` | Before declaring a fix or task done |
 | `writing-plans` | Design is approved — breaking work into tasks |
 | `writing-skills` | Creating or editing a skill |
+
+---
+
+
+### The Indie Hacker Journey
+
+Our 12 expansion skills comprehensively support the indie hacker roadmap:
+- **Validate:** `idea-validator`, `market-researcher`
+- **Build:** `chrome-extension-developer`
+- **Launch:** `launch-strategist`, `landing-page-builder`
+- **Revenue:** `pricing-psychologist`, `bootstrapper-finance`
+- **Operate:** `solo-founder-ops`, `indie-legal`, `analytics-setup`
+- **Advanced:** `ai-integrated-product`, `micro-saas-builder`
 
 ---
 

@@ -83,6 +83,24 @@ All skills are symlinked into `.agent/skills/` and are automatically available.
 | `real-time-features` | WebSockets, SSE, live collaboration, presence |
 | `i18n-localization` | Internationalization, translations, localized ASO |
 
+
+### Indie Hacker & Solopreneur
+
+| Skill | When to Use |
+|---|---|
+| `idea-validator` | Validating problems, markets, and distribution channels before building |
+| `market-researcher` | Finding a niche, sizing markets, customer interviews |
+| `chrome-extension-developer` | Building browser extensions (MV3, activeTab, permissions) |
+| `launch-strategist` | Product Hunt, Hacker News, Reddit launches, pre-launch |
+| `landing-page-builder` | High converting page framework, SaaS landing pages |
+| `pricing-psychologist` | Paywalls, pricing tiers, anchoring, LTV/CAC |
+| `bootstrapper-finance` | MRR tracking, runway calculation, when to quit job |
+| `solo-founder-ops` | Time allocation, ICE scoring, automation, burnout |
+| `indie-legal` | Privacy policies, TOS, basic GDPR/CCPA compliance |
+| `analytics-setup` | PostHog/Plausible setup, event taxonomy, core metrics |
+| `ai-integrated-product` | LLM APIs, cost management, prompt engineering |
+| `micro-saas-builder` | Building $1K-$10K MRR highly niched SaaS businesses |
+
 ## How to Read a Skill (Antigravity)
 
 Use `view_file` on the skill's `SKILL.md`:
