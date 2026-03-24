@@ -280,10 +280,7 @@ Activate when you work on specific technical domains:
 
 #### Configuration
 
-Per-project settings live in `.agent/config.yml`:
-
-- Set `auto_commit: false` when you want full control over your git history
-- This file is preserved across `/update-superpowers` runs — your settings won't be overwritten
+Per-project settings (like `auto_commit`) live in `.agent/config.yml` — see [Configuration](#configuration) for details.
 
 #### Common Pitfalls
 
