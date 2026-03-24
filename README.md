@@ -43,7 +43,7 @@ agy-superpowers init
 .agent/
 ├── rules/
 │   └── superpowers.md          # Always-on rule: agent checks skills before acting
-├── skills/                     # 56 skills (patched from upstream + 12 indie hacker skills)
+├── skills/                     # 58 skills (14 upstream + 44 expansion skills)
 │   ├── brainstorming/
 │   ├── writing-plans/
 │   ├── executing-plans/
@@ -89,11 +89,13 @@ agy-superpowers init
 
 ### Additional Workflows
 
-| Workflow              | What happens                                                   |
-| --------------------- | -------------------------------------------------------------- |
-| `/debug`              | Systematic 4-phase debugging process                           |
-| `/publish`            | Publish to npm with version bump, git tag, and push            |
-| `/update-superpowers` | Pull latest upstream release, re-sync skills, AI-rewrite rules |
+| Workflow               | What happens                                                   |
+| ---------------------- | -------------------------------------------------------------- |
+| `/debug`               | Systematic 4-phase debugging process                           |
+| `/publish`             | Publish to npm with version bump, git tag, and push            |
+| `/update-superpowers`  | Pull latest upstream release, re-sync skills, AI-rewrite rules |
+| `/ui-ux-pro-max`       | Plan and implement UI with curated design intelligence         |
+| `/mobile-uiux-promax`  | Plan and implement mobile app UI across all major platforms    |
 
 ---
 
@@ -101,7 +103,7 @@ agy-superpowers init
 
 ### Getting Started in 5 Minutes
 
-**How it works:** Superpowers gives your agent 56 specialized skills. You don't need to remember or invoke them — the agent **automatically reads and selects the right skill** based on what you ask. Just describe what you need in natural language.
+**How it works:** Superpowers gives your agent 58 specialized skills. You don't need to remember or invoke them — the agent **automatically reads and selects the right skill** based on what you ask. Just describe what you need in natural language.
 
 #### Your First Feature: A Walkthrough
 
@@ -332,6 +334,7 @@ When you run `/update-superpowers`, skills are:
 | `email-infrastructure`           | Setting up transactional email, deliverability, SPF/DKIM/DMARC, or email templates                          |
 | `executing-plans`                | Running a plan step-by-step with checkpoints                                                                |
 | `finishing-a-development-branch` | Implementation is complete and you need to merge / PR / discard                                             |
+| `frontend-design`                | Building web components, pages, or apps with high design quality — avoids generic AI aesthetics             |
 | `frontend-developer`             | Building web UI, component architecture, or reviewing frontend code                                         |
 | `game-design`                    | Designing game mechanics, core loops, progression, monetization, or difficulty curves                       |
 | `game-developer`                 | Working on game app features, reviewing game code, or game architecture decisions                           |
@@ -345,6 +348,7 @@ When you run `/update-superpowers`, skills are:
 | `market-researcher`              | Finding a niche, analyzing market size, researching customer segments, or doing customer discovery          |
 | `micro-saas-builder`             | Building a micro-SaaS product, choosing a niche SaaS idea, or designing a small scalable SaaS               |
 | `mobile-developer`               | Working on mobile app features, reviewing mobile code, or mobile architecture                               |
+| `mobile-uiux-promax`            | Designing or building mobile app UI for iOS, Android, React Native, Flutter, SwiftUI, or Compose           |
 | `monetization-strategist`        | Designing pricing models, freemium strategy, IAP, or modeling unit economics                                |
 | `paid-acquisition-specialist`    | Running Meta Ads, Google Ads, Apple Search Ads, or any paid acquisition channel                             |
 | `pricing-psychologist`           | Designing pricing, paywalls, free-to-paid conversion, or optimizing upgrade flows                           |
@@ -372,14 +376,15 @@ When you run `/update-superpowers`, skills are:
 
 ### The Indie Hacker Journey
 
-Our 12 expansion skills comprehensively support the indie hacker roadmap:
+44 expansion skills cover the full indie hacker lifecycle — from first idea to sustainable business:
 
 - **Validate:** `idea-validator`, `market-researcher`
-- **Build:** `chrome-extension-developer`
-- **Launch:** `launch-strategist`, `landing-page-builder`
-- **Revenue:** `pricing-psychologist`, `bootstrapper-finance`
-- **Operate:** `solo-founder-ops`, `indie-legal`, `analytics-setup`
-- **Advanced:** `ai-integrated-product`, `micro-saas-builder`
+- **Design:** `product-manager`, `ux-designer`, `cto-architect`
+- **Build:** `backend-developer`, `frontend-developer`, `frontend-design`, `mobile-developer`, `mobile-uiux-promax`, `game-developer`, `game-design`, `chrome-extension-developer`, `api-design`, `real-time-features`, `auth-and-identity`, `email-infrastructure`, `saas-architect`, `devops-engineer`, `security-engineer`, `i18n-localization`, `ai-integrated-product`, `micro-saas-builder`
+- **Launch:** `launch-strategist`, `landing-page-builder`, `app-store-optimizer`, `copywriter`
+- **Grow:** `growth-hacker`, `content-marketer`, `seo-specialist`, `conversion-optimizer`, `community-manager`, `influencer-marketer`, `paid-acquisition-specialist`, `retention-specialist`
+- **Revenue:** `monetization-strategist`, `pricing-psychologist`, `subscription-billing`, `bootstrapper-finance`
+- **Operate:** `solo-founder-ops`, `analytics-setup`, `customer-success-manager`, `data-analyst`, `indie-legal`
 
 ---
 
@@ -470,7 +475,7 @@ Content from these repos was ported, adapted, and integrated into the skills lib
 
 ---
 
-Antigravity integration, workflow adaptation & expansion skills (12 indie hacker skills, UI/UX intelligence databases, mobile design system) by [@bonnguyenitc](https://github.com/bonnguyenitc).
+Antigravity integration, workflow adaptation & 44 expansion skills (UI/UX intelligence databases, mobile design system) by [@bonnguyenitc](https://github.com/bonnguyenitc).
 
 ---
 
