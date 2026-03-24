@@ -451,8 +451,28 @@ This setup enforces four core principles across every task:
 
 ## Credits
 
-- **[Superpowers](https://github.com/obra/superpowers)** by [Jesse Vincent](https://blog.fsck.com) & [Prime Radiant](https://primeradiant.com) — the upstream skills library this repo is built on.
-- Antigravity integration & workflow adaptation by [@bonnguyenitc](https://github.com/bonnguyenitc).
+This project stands on the shoulders of many great open-source projects. A huge thank you to all of them! 🙏
+
+### 🏗️ Skill Sources
+
+Content from these repos was ported, adapted, and integrated into the skills library:
+
+| Repository | Author | Skills |
+|---|---|---|
+| [obra/superpowers](https://github.com/obra/superpowers) | [Jesse Vincent](https://blog.fsck.com) & [Prime Radiant](https://primeradiant.com) | **Core foundation** — upstream skills library this repo is built on |
+| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Vercel Labs | 66 React/Next.js rules + 36 React Native rules (in `frontend-developer` + `mobile-developer`) |
+| [antfu/skills](https://github.com/antfu/skills) | [Anthony Fu](https://github.com/antfu) | 44 Vue/Nuxt rules (in `frontend-developer`) |
+| [vuejs-ai/skills](https://github.com/vuejs-ai/skills) | vuejs-ai | Vue ecosystem agent skill rules (upstream of antfu/skills) |
+| [kevmoo/dash_skills](https://github.com/kevmoo/dash_skills) | [Kevin Moore](https://github.com/kevmoo) | 8 Dart & Flutter best-practice rules (in `mobile-developer`) |
+| [new-silvermoon/awesome-android-agent-skills](https://github.com/new-silvermoon/awesome-android-agent-skills) | new-silvermoon | 17 Android/Compose/Kotlin rules (in `mobile-developer`) |
+| [AvdLee/SwiftUI-Agent-Skill](https://github.com/AvdLee/SwiftUI-Agent-Skill) | [Antoine van der Lee](https://github.com/AvdLee) | 19 SwiftUI reference files (in `mobile-developer`) |
+| [msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) | msitarzewski | Deliverable-focused, workflow-oriented agent patterns (inspired indie hacker skills) |
+| [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | nextlevelbuilder | UI/UX Pro Max search databases — curated style, typography, color, UX, and stack knowledge (in `.shared/ui-ux-pro-max`) |
+
+---
+
+
+Antigravity integration, workflow adaptation & expansion skills (12 indie hacker skills, UI/UX intelligence databases, mobile design system) by [@bonnguyenitc](https://github.com/bonnguyenitc).
 
 ---
 
