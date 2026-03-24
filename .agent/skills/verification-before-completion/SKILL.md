@@ -99,6 +99,17 @@ Skip any step = lying, not verifying
 ❌ "Tests pass, phase complete"
 ```
 
+**`.agent/.tests/` check (if applicable):**
+
+If work involved modifying any `.agent/skills/<skill>/` or `.agent/.shared/<tool>/`, run tests before claiming done:
+```bash
+python3 .agent/.tests/run_tests.py <skill-name>
+```
+```
+✅ Run command → Paste full verbose output → All pass → Claim done
+❌ "Should still pass" / Skip running because "I didn't change the data"
+```
+
 **Agent delegation:**
 ```
 ✅ Agent reports success → Check VCS diff → Verify changes → Report actual state

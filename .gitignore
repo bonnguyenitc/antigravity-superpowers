@@ -3,3 +3,5 @@ superpowers.bak.*
 /superpowers
 test
 template/
+.superpowers
+__pycache__

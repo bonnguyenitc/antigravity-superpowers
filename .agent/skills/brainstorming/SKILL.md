@@ -25,6 +25,7 @@ You MUST create a task for each of these items and complete them in order:
 2. **Offer visual companion** (if topic will involve visual questions) — this is its own message, not combined with a clarifying question. See the Visual Companion section below.
 3. **Ask clarifying questions** — one at a time, understand purpose/constraints/success criteria
 4. **Propose 2-3 approaches** — with trade-offs and your recommendation
+   - *UI/visual tasks only:* Before proposing, run `search.py` to gather style, typography, color, and UX data so proposals are grounded in real design patterns. See the [UI/UX Intelligence](#uiux-intelligence) section below.
 5. **Present design** — in sections scaled to their complexity, get user approval after each section
 6. **Write design doc** — save to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md` and commit
 7. **Spec review loop** — dispatch spec-document-reviewer subagent with precisely crafted review context (never your session history); fix issues and re-dispatch until approved (max 3 iterations, then surface to human)
@@ -85,6 +86,62 @@ digraph brainstorming {
 - Propose 2-3 different approaches with trade-offs
 - Present options conversationally with your recommendation and reasoning
 - Lead with your recommended option and explain why
+
+## UI/UX Intelligence
+
+**When the task involves any visual/UI work** (landing pages, dashboards, components, screens, design systems), run the UI/UX Pro Max search tool **before** presenting the design. This grounds your proposals in a curated knowledge base rather than generic defaults.
+
+**How to trigger:**
+
+```bash
+python3 .agent/.shared/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain>
+```
+
+**Recommended search sequence** (run in parallel where possible):
+
+| # | Domain | What to search | Example |
+|---|--------|----------------|---------|
+| 1 | `product` | Product type + industry | `"SaaS dashboard"`, `"beauty landing page"` |
+| 2 | `style` | Desired visual style | `"glassmorphism dark"`, `"minimal clean"` |
+| 3 | `typography` | Mood/personality | `"elegant modern"`, `"playful friendly"` |
+| 4 | `color` | Industry or product type | `"fintech"`, `"healthcare"`, `"beauty spa"` |
+| 5 | `landing` | Page structure type | `"hero-centric social-proof"` |
+| 6 | `ux` | `"animation"`, `"accessibility"`, `"z-index"` | Always check these three |
+| 7 | `stack` | Target framework | `--stack react-native`, `--stack flutter` |
+
+**When to use each domain:**
+- Always run `product` + `style` + `ux` as a baseline for any UI task
+- Add `typography` + `color` when presenting a full design system
+- Add `landing` only for marketing/landing pages
+- Add `chart` only for analytics dashboards
+- Use `--stack` flag to get implementation-specific patterns (e.g., `--stack react-native` for mobile)
+
+**Synthesize results before presenting design:** Do not dump raw search output to the user. Summarize what you found and explain how it informs your design choices.
+
+> **Skip this step** for purely backend, data-model, or logic-only tasks where no UI is involved.
+
+### Mobile UI/UX Intelligence (Extended Layer)
+
+**When the request is for a mobile app** — detect keywords like: `iOS`, `Android`, `React Native`, `Flutter`, `SwiftUI`, `Jetpack Compose`, `mobile`, `app screen`, `native app` — run the **mobile-uiux-promax workflow** IN ADDITION to the web tool above.
+
+Read the workflow file first: `.agent/workflows/mobile-uiux-promax.md`
+
+The mobile workflow adds 3 more steps after the web style layer:
+
+```bash
+# Step 2: Mobile behavior
+python3 .agent/.shared/mobile-uiux-promax/scripts/mobile-search.py "<nav pattern>" --domain navigation
+python3 .agent/.shared/mobile-uiux-promax/scripts/mobile-search.py "<component>" --domain components
+python3 .agent/.shared/mobile-uiux-promax/scripts/mobile-search.py "<platform topic>" --domain platform
+python3 .agent/.shared/mobile-uiux-promax/scripts/mobile-search.py "<animation>" --domain animation
+
+# Step 3: Stack guidelines (react-native / flutter / swiftui / jetpack-compose)
+python3 .agent/.shared/mobile-uiux-promax/scripts/mobile-search.py "<topic>" --stack react-native
+
+# Step 4: Synthesize style + mobile behavior + stack patterns → present design
+```
+
+Read and apply the mobile-uiux-promax skill: `.agent/skills/mobile-uiux-promax/SKILL.md`
 
 **Presenting the design:**
 
