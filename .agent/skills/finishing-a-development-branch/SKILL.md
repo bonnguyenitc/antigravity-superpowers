@@ -67,20 +67,24 @@ Which option?
 
 #### Option 1: Merge Locally
 
+**Before git write steps:** Check `.agent/config.yml` for `auto_commit`.
+- If `auto_commit: false`: skip all git write operations below, print "Skipping git operation (auto_commit: false)."
+- If `auto_commit: true` (or absent): proceed normally.
+
 ```bash
 # Switch to base branch
 git checkout <base-branch>
 
-# Pull latest
+# Pull latest (blocked if auto_commit: false)
 git pull
 
-# Merge feature branch
+# Merge feature branch (blocked if auto_commit: false)
 git merge <feature-branch>
 
 # Verify tests on merged result
 <test command>
 
-# If tests pass
+# If tests pass (blocked if auto_commit: false)
 git branch -d <feature-branch>
 ```
 
@@ -88,11 +92,15 @@ Then: Cleanup worktree (Step 5)
 
 #### Option 2: Push and Create PR
 
+**Before git write steps:** Check `.agent/config.yml` for `auto_commit`.
+- If `auto_commit: false`: skip all git write operations below, print "Skipping git operation (auto_commit: false)."
+- If `auto_commit: true` (or absent): proceed normally.
+
 ```bash
-# Push branch
+# Push branch (blocked if auto_commit: false)
 git push -u origin <feature-branch>
 
-# Create PR
+# Create PR (blocked if auto_commit: false)
 gh pr create --title "<title>" --body "$(cat <<'EOF'
 ## Summary
 <2-3 bullets of what changed>
@@ -125,10 +133,14 @@ Type 'discard' to confirm.
 
 Wait for exact confirmation.
 
+**Before git write steps:** Check `.agent/config.yml` for `auto_commit`.
+- If `auto_commit: false`: skip all git write operations below, print "Skipping git operation (auto_commit: false)."
+- If `auto_commit: true` (or absent): proceed normally.
+
 If confirmed:
 ```bash
 git checkout <base-branch>
-git branch -D <feature-branch>
+git branch -D <feature-branch>  # blocked if auto_commit: false
 ```
 
 Then: Cleanup worktree (Step 5)

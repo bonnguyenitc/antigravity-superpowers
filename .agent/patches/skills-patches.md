@@ -92,3 +92,27 @@ Update any diagram labels that mention "commits" to reflect this conditionality
 **Intent:** Make the "Commit your work" step in the implementer's job list conditional:
 - Change "4. Commit your work" to "4. Commit your work (if auto_commit is enabled)"
 - Add sub-steps: read `.agent/config.yml`, if `auto_commit: true` (or not set): `git add` + `git commit`, if `auto_commit: false`: skip commit and staging entirely, print skip message.
+
+---
+
+## Patch: git-policy rule — finishing-a-development-branch
+
+**File:** `finishing-a-development-branch/SKILL.md`
+**Intent:** Before each git write operation in Execute Choice (Option 1: merge + branch delete,
+Option 2: push, Option 4: branch delete), add an explicit `auto_commit` check:
+- Read `.agent/config.yml` before the git operation
+- If `auto_commit: false`: skip the operation, print "Skipping git operation (auto_commit: false)."
+- If `auto_commit: true` (or absent): proceed normally.
+
+---
+
+## Patch: git-policy rule — using-git-worktrees
+
+**File:** `using-git-worktrees/SKILL.md`
+**Intent:** In the "If NOT ignored" safety verification block, make the git commit step conditional:
+- Step 1 (add to .gitignore): always runs — file edit is not a git write operation
+- Step 2 (commit): check `auto_commit` in `.agent/config.yml`
+  - If `false`: skip commit, print "Skipping git operation (auto_commit: false)."
+  - If `true` (or absent): `git add .gitignore && git commit -m "chore: ignore worktree directory"`
+- Step 3 (proceed with worktree creation): always runs
+
