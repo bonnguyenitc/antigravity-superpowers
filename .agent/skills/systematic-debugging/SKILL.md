@@ -167,6 +167,23 @@ You MUST complete each phase before proceeding to the next.
    - Ask for help
    - Research more
 
+### Confirmation Gate: Present Analysis Before Fixing
+
+<HARD-GATE>
+You MUST present your complete analysis to the user and get explicit confirmation
+BEFORE proceeding to Phase 4 (Implementation).
+
+**Present a summary containing:**
+1. **Root Cause** — from Phase 1
+2. **Pattern Analysis** — key differences found in Phase 2
+3. **Hypothesis** — your confirmed theory from Phase 3
+4. **Proposed Fix** — what you plan to change (files, functions, approach)
+
+Then ask: "Bạn đồng ý với phân tích và hướng fix này không?"
+
+Wait for user confirmation. Do NOT proceed to Phase 4 until confirmed.
+</HARD-GATE>
+
 ### Phase 4: Implementation
 
 **Fix the root cause, not the symptom:**
