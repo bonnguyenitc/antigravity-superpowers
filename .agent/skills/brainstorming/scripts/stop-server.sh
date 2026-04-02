@@ -3,8 +3,8 @@
 # Usage: stop-server.sh <session_dir>
 #
 # Kills the server process. Only deletes session directory if it's
-# under /tmp (ephemeral). Persistent directories (.superpowers/) are
-# kept so mockups can be reviewed later.
+# ephemeral (/tmp or .agent/tmp). Persistent directories (.superpowers/)
+# are kept so mockups can be reviewed later.
 
 SESSION_DIR="$1"
 
@@ -45,8 +45,8 @@ if [[ -f "$PID_FILE" ]]; then
 
   rm -f "$PID_FILE" "${STATE_DIR}/server.log"
 
-  # Only delete ephemeral /tmp directories
-  if [[ "$SESSION_DIR" == /tmp/* ]]; then
+  # Only delete ephemeral directories (/tmp or .agent/tmp)
+  if [[ "$SESSION_DIR" == /tmp/* ]] || [[ "$SESSION_DIR" == */.agent/tmp/* ]]; then
     rm -rf "$SESSION_DIR"
   fi
 

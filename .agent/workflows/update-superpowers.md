@@ -8,13 +8,13 @@ This workflow has two phases:
 
 // turbo
 1. Preserve user config (if exists):
-   `[ -f .agent/config.yml ] && cp .agent/config.yml /tmp/agent-config-backup.yml && echo "Config backed up" || echo "No config to backup"`
+   `mkdir -p .agent/tmp && [ -f .agent/config.yml ] && cp .agent/config.yml .agent/tmp/agent-config-backup.yml && echo "Config backed up" || echo "No config to backup"`
 
 // turbo
 2. Run the update script:
    `bash .agent/.shared/update-superpowers.sh`
 
-   - If output ends with "Already up to date" → restore config if backed up (`[ -f /tmp/agent-config-backup.yml ] && cp /tmp/agent-config-backup.yml .agent/config.yml`), then **STOP**. Nothing to do.
+   - If output ends with "Already up to date" → restore config if backed up (`[ -f .agent/tmp/agent-config-backup.yml ] && cp .agent/tmp/agent-config-backup.yml .agent/config.yml`), then **STOP**. Nothing to do.
    - If clone fails → restore config if backed up, then **STOP**. Report the error to the user.
    - On success the script prints `SCRIPT_DONE:<new-tag>` — note the new tag and continue.
 
@@ -24,7 +24,7 @@ This workflow has two phases:
 
 // turbo
 4. Restore user config:
-   `[ -f /tmp/agent-config-backup.yml ] && cp /tmp/agent-config-backup.yml .agent/config.yml && echo "Config restored" || echo "No config to restore"`
+   `[ -f .agent/tmp/agent-config-backup.yml ] && cp .agent/tmp/agent-config-backup.yml .agent/config.yml && echo "Config restored" || echo "No config to restore"`
 
 5. **Phase 2 — Update skill list in rules**
 
