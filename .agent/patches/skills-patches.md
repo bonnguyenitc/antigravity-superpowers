@@ -116,3 +116,26 @@ Option 2: push, Option 4: branch delete), add an explicit `auto_commit` check:
   - If `true` (or absent): `git add .gitignore && git commit -m "chore: ignore worktree directory"`
 - Step 3 (proceed with worktree creation): always runs
 
+---
+
+## Patch: temp directory — all skills
+
+**Files:**
+- `brainstorming/scripts/server.cjs`
+- `brainstorming/scripts/start-server.sh`
+- `brainstorming/scripts/stop-server.sh`
+- `brainstorming/visual-companion.md`
+- `writing-skills/testing-skills-with-subagents.md`
+- `rust-developer/references/rust-rules/test-fixture-raii.md`
+- `rust-developer/references/rust-rules/opt-pgo-profile.md`
+
+**Intent:** Replace all `/tmp/` paths with `.agent/tmp/` equivalents. Temp data should stay
+within the project's `.agent/tmp/` directory instead of polluting the system `/tmp/`.
+
+Specific changes:
+- `server.cjs`: fallback `SESSION_DIR` should resolve to `.agent/tmp/brainstorm` via `path.resolve(__dirname, '..', '..', '..', 'tmp', 'brainstorm')`
+- `start-server.sh`: compute `AGENT_DIR` from `SCRIPT_DIR` (walk up 3 levels to `.agent/`), use `${AGENT_DIR}/tmp/brainstorm-${SESSION_ID}` as fallback
+- `stop-server.sh`: cleanup condition should match both `/tmp/*` and `*/.agent/tmp/*`
+- `visual-companion.md`: documentation references to `/tmp` → `.agent/tmp/`
+- `testing-skills-with-subagents.md`: example path `/tmp/payment-system` → `.agent/tmp/payment-system`
+- Rust reference docs: all `/tmp/` example paths → `.agent/tmp/` equivalents
