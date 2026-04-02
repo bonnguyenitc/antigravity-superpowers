@@ -1,6 +1,6 @@
 {
   "name": "agy-superpowers",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "description": "Superpowers skills library for Google Antigravity agent — scaffold .agent/ with one command",
   "type": "module",
   "bin": {
