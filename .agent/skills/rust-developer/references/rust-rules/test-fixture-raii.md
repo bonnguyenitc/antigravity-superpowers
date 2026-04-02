@@ -11,7 +11,7 @@ Tests often need setup and teardown—creating temp files, starting servers, set
 ```rust
 #[test]
 fn test_with_temp_file() {
-    let path = "/tmp/test_file.txt";
+    let path = ".agent/tmp/test_file.txt";
     std::fs::write(path, "test data").unwrap();
     
     let result = process_file(path);
@@ -132,7 +132,7 @@ use scopeguard::defer;
 
 #[test]
 fn test_with_defer() {
-    let path = "/tmp/test_file.txt";
+    let path = ".agent/tmp/test_file.txt";
     std::fs::write(path, "data").unwrap();
     
     defer! {

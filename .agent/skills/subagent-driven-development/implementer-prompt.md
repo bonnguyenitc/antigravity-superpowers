@@ -28,13 +28,14 @@ Task tool (general-purpose):
 
     ## Your Job
 
+    Once you're clear on requirements:
     1. Implement exactly what the task specifies
     2. Write tests (following TDD if task says to)
     3. Verify implementation works
     4. Commit your work (if auto_commit is enabled)
-       - Read `.agent/config.yml` to check the `auto_commit` setting
-       - If `auto_commit: true` (or not set): `git add` changed files + `git commit`
-       - If `auto_commit: false`: skip commit and staging entirely. Print: "Skipping commit (auto_commit: false in .agent/config.yml). Files left as modified for manual commit."
+       - Read `.agent/config.yml` — check `auto_commit` setting
+       - If `auto_commit: true` (or not set): `git add` + `git commit`
+       - If `auto_commit: false`: skip commit and staging entirely, print "Skipping commit (auto_commit: false)."
     5. Self-review (see below)
     6. Report back
 

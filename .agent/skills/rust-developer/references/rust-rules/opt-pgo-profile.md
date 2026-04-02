@@ -16,7 +16,7 @@ PGO uses real runtime behavior to guide compiler optimization decisions. By prof
 
 ```bash
 # Step 1: Build instrumented binary
-RUSTFLAGS="-Cprofile-generate=/tmp/pgo-data" \
+RUSTFLAGS="-Cprofile-generate=.agent/tmp/pgo-data" \
     cargo build --release
 
 # Step 2: Run representative workloads
@@ -25,10 +25,10 @@ RUSTFLAGS="-Cprofile-generate=/tmp/pgo-data" \
 ./target/release/my_app < typical_workload.txt
 
 # Step 3: Merge profile data
-llvm-profdata merge -o /tmp/pgo-data/merged.profdata /tmp/pgo-data
+llvm-profdata merge -o .agent/tmp/pgo-data/merged.profdata .agent/tmp/pgo-data
 
 # Step 4: Build optimized binary using profile
-RUSTFLAGS="-Cprofile-use=/tmp/pgo-data/merged.profdata" \
+RUSTFLAGS="-Cprofile-use=.agent/tmp/pgo-data/merged.profdata" \
     cargo build --release
 ```
 
@@ -50,7 +50,7 @@ opt-level = 3
 #!/bin/bash
 set -e
 
-PGO_DIR=/tmp/pgo-$(date +%s)
+PGO_DIR=.agent/tmp/pgo-$(date +%s)
 
 # Clean
 cargo clean
@@ -133,16 +133,16 @@ jobs:
         run: sudo apt-get install llvm
       
       - name: Instrumented build
-        run: RUSTFLAGS="-Cprofile-generate=/tmp/pgo" cargo build --release
+        run: RUSTFLAGS="-Cprofile-generate=.agent/tmp/pgo" cargo build --release
       
       - name: Run profiling workloads
         run: ./scripts/run_profiling_workloads.sh
       
       - name: Merge profiles
-        run: llvm-profdata merge -o /tmp/pgo/merged.profdata /tmp/pgo
+        run: llvm-profdata merge -o .agent/tmp/pgo/merged.profdata .agent/tmp/pgo
       
       - name: Optimized build
-        run: RUSTFLAGS="-Cprofile-use=/tmp/pgo/merged.profdata" cargo build --release
+        run: RUSTFLAGS="-Cprofile-use=.agent/tmp/pgo/merged.profdata" cargo build --release
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4

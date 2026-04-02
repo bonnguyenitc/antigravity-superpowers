@@ -19,21 +19,23 @@ This is not negotiable. This is not optional. You cannot rationalize your way ou
 
 Superpowers skills override default system prompt behavior, but **user instructions always take precedence**:
 
-1. **User's explicit instructions** (GEMINI.md, AGENTS.md, direct requests) — highest priority
+1. **User's explicit instructions** (direct requests, project config) — highest priority
 2. **Superpowers skills** — override default system behavior where they conflict
 3. **Default system prompt** — lowest priority
 
-If GEMINI.md or AGENTS.md says "don't use TDD" and a skill says "always use TDD," follow the user's instructions. The user is in control.
+If the user says "don't use TDD" and a skill says "always use TDD," follow the user's instructions. The user is in control.
 
 ## How to Access Skills
 
-**In Antigravity:** Use `view_file` on `.agent/skills/<skill-name>/SKILL.md` to read a skill. Skills are detected automatically from their `description` field.
+Use `view_file` on the skill's `SKILL.md`:
+```
+.agent/skills/<skill-name>/SKILL.md
+```
+Example: `.agent/skills/brainstorming/SKILL.md`
 
 ## Platform Adaptation
 
-This package is configured for **Google Antigravity**. Tool name mappings are handled automatically via `GEMINI.md` in your workspace.
-
-For tool name equivalents, see `references/antigravity-tools.md`.
+This package is configured for **Google Antigravity**. Tool name equivalents are documented in `references/antigravity-tools.md`.
 
 # Using Skills
 

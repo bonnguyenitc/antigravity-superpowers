@@ -111,9 +111,10 @@ digraph brainstorming {
 - Write the validated design (spec) to `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md`
   - (User preferences for spec location override this default)
 - Use elements-of-style:writing-clearly-and-concisely skill if available
-- **Commit the design document to git** — but first check `.agent/config.yml`:
-    - If `auto_commit: true` (default): run `git add <path> && git commit -m "docs: add <topic> design spec"`
-    - If `auto_commit: false`: skip commit and staging entirely. Print: "Skipping commit (auto_commit: false in .agent/config.yml). File is ready for manual commit."
+- Commit the design document to git (if `auto_commit` is enabled):
+  - Read `.agent/config.yml` — check `auto_commit` setting
+  - If `auto_commit: true` (default when absent): `git add <path> && git commit -m "docs: add <topic> design spec"`
+  - If `auto_commit: false`: skip commit and staging entirely. Print: "Skipping commit (auto_commit: false in .agent/config.yml). File is ready for manual commit."
 
 **Spec Self-Review:**
 After writing the spec document, look at it with fresh eyes:

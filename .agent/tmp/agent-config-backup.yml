@@ -1,0 +1,9 @@
+# Antigravity Superpowers — Project Config
+#
+# Configure per-project behavior by editing this file.
+# Skills read this file to determine how to behave in this project.
+
+# auto_commit: true | false
+# When true (default), AI automatically commits after completing tasks and writing design docs.
+# When false, all git commits and staging are skipped; files are left as modified for manual commit.
+auto_commit: false

@@ -47,15 +47,14 @@ Save `screen_dir` and `state_dir` from the response. Tell user to open the URL.
 
 **Note:** Pass the project root as `--project-dir` so mockups persist in `.superpowers/brainstorm/` and survive server restarts. Without it, files go to `.agent/tmp/` and get cleaned up on server stop. Remind the user to add `.superpowers/` to `.gitignore` if it's not already there.
 
-**Launching the server by platform:**
+**Launching the server:**
 
-**Antigravity:**
 ```bash
 # Launch the server normally
 scripts/start-server.sh --project-dir /path/to/project
 ```
 
-**Other environments:** The server must keep running in the background across conversation turns. If your environment reaps detached processes, use `--foreground` and launch the command with your platform's background execution mechanism.
+The script backgrounds the server itself. If your environment reaps detached processes, use `--foreground` and launch the command with your platform's background execution mechanism.
 
 If the URL is unreachable from your browser (common in remote/containerized setups), bind a non-loopback host:
 

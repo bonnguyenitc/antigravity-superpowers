@@ -46,6 +46,9 @@ All skills are symlinked into `.agent/skills/` and are automatically available.
 | `saas-architect` | Multi-tenant SaaS architecture, tenant isolation |
 | `devops-engineer` | CI/CD, infrastructure, deployment, monitoring |
 | `security-engineer` | App security, auth, GDPR, security audits |
+| `frontend-design` | Web components, pages, artifacts — high design quality, avoids generic AI aesthetics |
+| `mobile-uiux-promax` | Mobile app UI for iOS, Android, React Native, Flutter, SwiftUI, Compose |
+| `rust-developer` | Rust code, ownership/borrow errors, async patterns, idiomatic Rust |
 
 ### Business & Growth
 
