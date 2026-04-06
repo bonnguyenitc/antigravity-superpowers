@@ -5,3 +5,4 @@ test
 template/
 .superpowers
 __pycache__
+.agent/tmp/
