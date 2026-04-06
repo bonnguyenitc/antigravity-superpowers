@@ -43,16 +43,15 @@ agy-superpowers init
 .agent/
 ├── rules/
 │   └── superpowers.md          # Always-on rule: agent checks skills before acting
-├── skills/                     # 58 skills (14 upstream + 44 expansion skills)
+├── skills/                     # 23 active skills (14 upstream + 9 expansion skills)
 │   ├── brainstorming/
 │   ├── writing-plans/
 │   ├── executing-plans/
-│   ├── backend-developer/
 │   ├── frontend-developer/
 │   ├── mobile-developer/
-│   ├── growth-hacker/
-│   ├── monetization-strategist/
-│   └── ...                     # + 48 more skills
+│   ├── subscription-billing/
+│   ├── i18n-localization/
+│   └── ...                     # + 15 more skills
 ├── workflows/
 │   ├── brainstorm.md           # /brainstorm
 │   ├── write-plan.md           # /write-plan
@@ -103,7 +102,7 @@ agy-superpowers init
 
 ### Getting Started in 5 Minutes
 
-**How it works:** Superpowers gives your agent 58 specialized skills. You don't need to remember or invoke them — the agent **automatically reads and selects the right skill** based on what you ask. Just describe what you need in natural language.
+**How it works:** Superpowers gives your agent 23 specialized skills. You don't need to remember or invoke them — the agent **automatically reads and selects the right skill** based on what you ask. Just describe what you need in natural language.
 
 #### Your First Feature: A Walkthrough
 
@@ -160,20 +159,12 @@ Activate when you work on specific technical domains:
 
 | Skill                        | When it activates                                            |
 | ---------------------------- | ------------------------------------------------------------ |
-| `backend-developer`          | Designing APIs, server-side logic, database schemas          |
 | `frontend-developer`         | Building web UI, component architecture                      |
 | `mobile-developer`           | Mobile app features, React Native / Flutter / iOS / Android  |
-| `game-developer`             | Game app features, game code, game architecture              |
-| `api-design`                 | REST or GraphQL APIs, versioning, rate limiting, pagination  |
-| `real-time-features`         | WebSockets, SSE, live collaboration, real-time notifications |
-| `auth-and-identity`          | Authentication, authorization, SSO, RBAC                     |
-| `devops-engineer`            | CI/CD, infrastructure, deployment, monitoring                |
-| `security-engineer`          | App security, user data handling, GDPR/App Store compliance  |
-| `email-infrastructure`       | Transactional email, deliverability, SPF/DKIM/DMARC          |
-| `saas-architect`             | Multi-tenant SaaS architecture, tenant isolation             |
-| `chrome-extension-developer` | Chrome extensions, browser-based tools                       |
+| `frontend-design`            | Web components, pages, apps — high design quality            |
+| `mobile-uiux-promax`         | Mobile app UI for iOS, Android, React Native, Flutter        |
 
-> **Example prompt:** _"Design a REST API for user management with rate limiting and pagination"_ → activates `api-design` + `backend-developer`
+> **Example prompt:** _"Build a responsive dashboard with dark mode"_ → activates `frontend-developer` + `frontend-design`
 
 #### 🎨 Product & Design
 
@@ -181,56 +172,18 @@ Activate when you work on specific technical domains:
 | ------------------- | ----------------------------------------------------------------- |
 | `product-manager`   | Defining requirements, prioritizing features, planning roadmaps   |
 | `ux-designer`       | Designing UI, wireframes, user research, information architecture |
-| `cto-architect`     | System design decisions, tech debt, planning for scale            |
+| `copywriter`        | Landing page copy, app store descriptions, email sequences        |
 | `i18n-localization` | Internationalization, localizing for new markets                  |
-| `game-design`       | Game mechanics, core loops, progression, difficulty curves        |
 
 > **Example prompt:** _"Help me prioritize features for the next sprint based on user feedback"_ → activates `product-manager`
 
-#### 📈 Marketing & Growth
+#### 💰 Infrastructure & Billing
 
-| Skill                         | When it activates                                              |
-| ----------------------------- | -------------------------------------------------------------- |
-| `growth-hacker`               | User acquisition, viral loops, activation funnels              |
-| `content-marketer`            | Content strategy, SEO content, social media, newsletters       |
-| `seo-specialist`              | Technical SEO, keyword research, on-page optimization          |
-| `conversion-optimizer`        | Landing pages, trial-to-paid funnels, paywall design           |
-| `copywriter`                  | Landing page copy, app store descriptions, email sequences     |
-| `community-manager`           | Discord, Reddit, Slack communities, engagement strategy        |
-| `influencer-marketer`         | UGC campaigns, creator partnerships, TikTok/YouTube marketing  |
-| `paid-acquisition-specialist` | Meta Ads, Google Ads, Apple Search Ads, ROAS optimization      |
-| `launch-strategist`           | Product launch, go-to-market, pre-launch campaigns             |
-| `landing-page-builder`        | Landing pages, waitlist pages, marketing sites                 |
-| `app-store-optimizer`         | App Store / Google Play listing optimization, keyword strategy |
+| Skill                  | When it activates                                                |
+| ---------------------- | ---------------------------------------------------------------- |
+| `subscription-billing` | Stripe integration, webhooks, trial logic, dunning flows         |
 
-> **Example prompt:** _"Write an ASO-optimized App Store description for my meditation app"_ → activates `app-store-optimizer` + `copywriter`
-
-#### 💰 Revenue & Operations
-
-| Skill                      | When it activates                                                  |
-| -------------------------- | ------------------------------------------------------------------ |
-| `monetization-strategist`  | Pricing models, freemium strategy, IAP, unit economics             |
-| `pricing-psychologist`     | Pricing, paywalls, free-to-paid conversion                         |
-| `subscription-billing`     | Stripe integration, webhooks, trial logic, dunning flows           |
-| `bootstrapper-finance`     | MRR tracking, runway calculation, financial decisions              |
-| `solo-founder-ops`         | Time management, feature prioritization, running multiple products |
-| `analytics-setup`          | Analytics, tracking tools, metrics dashboards                      |
-| `customer-success-manager` | User support, feedback loops, NPS/CSAT, churn                      |
-| `data-analyst`             | Metrics frameworks, funnel analysis, cohort analysis, A/B tests    |
-| `indie-legal`              | Privacy policies, terms of service, GDPR/CCPA                      |
-
-> **Example prompt:** _"Should I charge $9/mo or $29/mo for my SaaS? Here's my target audience..."_ → activates `pricing-psychologist` + `monetization-strategist`
-
-#### 🚀 Validate & Scale
-
-| Skill                   | When it activates                                               |
-| ----------------------- | --------------------------------------------------------------- |
-| `idea-validator`        | Evaluating a product idea, assessing market fit before building |
-| `market-researcher`     | Finding a niche, analyzing market size, customer discovery      |
-| `ai-integrated-product` | Integrating AI/LLM capabilities, building AI-powered features   |
-| `micro-saas-builder`    | Building a micro-SaaS, choosing a niche SaaS idea               |
-
-> **Example prompt:** _"I have an idea for an AI writing tool — is it worth building?"_ → activates `idea-validator` + `market-researcher`
+> **Example prompt:** _"Set up subscription billing with Stripe and handle trial-to-paid conversion"_ → activates `subscription-billing`
 
 ---
 
@@ -251,7 +204,7 @@ Activate when you work on specific technical domains:
 
 - **Provide context** — mention your tech stack, project name, and constraints: _"In my Next.js app with Supabase auth..."_
 - **State goals, not solutions** — _"Users drop off during signup"_ gives the agent room to find the best fix, vs _"Add a progress bar to the signup form"_
-- **Mention specific domains** to activate the right skills — _"Review the **security** of my auth flow"_ triggers `security-engineer`, _"Optimize the **SEO** for my landing page"_ triggers `seo-specialist`
+- **Mention specific domains** to activate the right skills — _"Design the **UX** for my onboarding flow"_ triggers `ux-designer`, _"Localize my app for Japanese"_ triggers `i18n-localization`
 
 #### Combining Workflows for Complex Projects
 
@@ -261,16 +214,8 @@ Activate when you work on specific technical domains:
 /brainstorm → /write-plan → /execute-plan → /code-review
     ↓ then in separate conversations:
     "Write marketing copy for..." → copywriter skill
-    "Optimize my App Store listing..." → ASO skill
-    "Design a pricing strategy..." → pricing skill
-```
-
-**Idea → Validation → Build:**
-
-```
-"I have an idea for X, is it viable?" → idea-validator
-"Research the market for X" → market-researcher
-/brainstorm → /write-plan → /execute-plan → build it
+    "Set up billing with Stripe..." → subscription-billing skill
+    "Localize for Japanese market..." → i18n-localization skill
 ```
 
 **Debugging effectively:**
@@ -293,7 +238,7 @@ Per-project settings (like `auto_commit`) live in `.agent/config.yml` — see [C
 | Cram multiple goals into one prompt                | One conversation = one clear objective                            |
 | Jump to `/execute-plan` without reviewing the spec | Review and approve the design spec before execution               |
 | Skip `/code-review` before merging                 | Always review before merge — catch bugs early                     |
-| Assume the agent only writes code                  | Ask about pricing, marketing, legal — it has skills for those too |
+| Use long conversations for multiple tasks          | Start a new conversation for each distinct task (saves tokens)    |
 
 ---
 
@@ -311,80 +256,31 @@ When you run `/update-superpowers`, skills are:
 
 ## Skills Reference
 
-| Skill                            | Triggers automatically when...                                                                              |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `ai-integrated-product`          | Integrating AI/LLM capabilities into a product, building AI-powered features                                |
-| `analytics-setup`                | Setting up analytics, choosing tracking tools, or designing a metrics dashboard for an indie product        |
-| `api-design`                     | Designing REST or GraphQL APIs, versioning, rate limiting, pagination, or API docs                          |
-| `app-store-optimizer`            | Working on App Store / Google Play listing optimization, keyword strategy, or A/B testing                   |
-| `auth-and-identity`              | Implementing authentication, authorization, SSO/SAML/OIDC, session management, or RBAC                      |
-| `backend-developer`              | Designing APIs, server-side logic, database schemas, or reviewing backend code                              |
-| `bootstrapper-finance`           | Tracking MRR, calculating runway, making financial decisions for a solo/bootstrapped business               |
-| `brainstorming`                  | Adding a feature, building a component, or modifying behavior                                               |
-| `chrome-extension-developer`     | Building a Chrome extension, browser extension, or browser-based tool                                       |
-| `community-manager`              | Building and managing communities on Discord, Reddit, Slack, or social platforms                            |
-| `content-marketer`               | Planning content strategy, SEO content, social media, or email newsletters                                  |
-| `conversion-optimizer`           | Optimizing landing pages, trial-to-paid funnels, paywall design, or onboarding flows                        |
-| `copywriter`                     | Writing landing page copy, app store descriptions, email sequences, or user-facing text                     |
-| `cto-architect`                  | Making system design decisions, managing tech debt, planning for scale                                      |
-| `customer-success-manager`       | Managing user support, feedback loops, NPS/CSAT tracking, or handling churn                                 |
-| `data-analyst`                   | Setting up metrics, analyzing funnels, cohort analysis, dashboards, or A/B test results                     |
-| `devops-engineer`                | Working on CI/CD pipelines, infrastructure, deployment, monitoring, or reliability                          |
-| `dispatching-parallel-agents`    | Facing 2+ independent tasks that can run without shared state                                               |
-| `email-infrastructure`           | Setting up transactional email, deliverability, SPF/DKIM/DMARC, or email templates                          |
-| `executing-plans`                | Running a plan step-by-step with checkpoints                                                                |
-| `finishing-a-development-branch` | Implementation is complete and you need to merge / PR / discard                                             |
-| `frontend-design`                | Building web components, pages, or apps with high design quality — avoids generic AI aesthetics             |
-| `frontend-developer`             | Building web UI, component architecture, or reviewing frontend code                                         |
-| `game-design`                    | Designing game mechanics, core loops, progression, monetization, or difficulty curves                       |
-| `game-developer`                 | Working on game app features, reviewing game code, or game architecture decisions                           |
-| `growth-hacker`                  | Planning user acquisition, viral loops, activation funnels, or growth experiments                           |
-| `i18n-localization`              | Planning i18n architecture, localizing for new markets, or managing translations                            |
-| `idea-validator`                 | Starting a new project, evaluating a product idea, or assessing market fit before building                  |
-| `indie-legal`                    | Creating privacy policies, terms of service, handling GDPR/CCPA basics, or understanding legal requirements |
-| `influencer-marketer`            | Planning UGC campaigns, creator partnerships, TikTok/YouTube/Instagram marketing                            |
-| `landing-page-builder`           | Creating a landing page, waitlist page, product page, or marketing site                                     |
-| `launch-strategist`              | Preparing to launch a product, planning go-to-market, or running a pre-launch campaign                      |
-| `market-researcher`              | Finding a niche, analyzing market size, researching customer segments, or doing customer discovery          |
-| `micro-saas-builder`             | Building a micro-SaaS product, choosing a niche SaaS idea, or designing a small scalable SaaS               |
-| `mobile-developer`               | Working on mobile app features, reviewing mobile code, or mobile architecture                               |
-| `mobile-uiux-promax`            | Designing or building mobile app UI for iOS, Android, React Native, Flutter, SwiftUI, or Compose           |
-| `monetization-strategist`        | Designing pricing models, freemium strategy, IAP, or modeling unit economics                                |
-| `paid-acquisition-specialist`    | Running Meta Ads, Google Ads, Apple Search Ads, or any paid acquisition channel                             |
-| `pricing-psychologist`           | Designing pricing, paywalls, free-to-paid conversion, or optimizing upgrade flows                           |
-| `product-manager`                | Defining requirements, prioritizing features, planning roadmaps, or validating problems                     |
-| `real-time-features`             | Implementing WebSockets, SSE, live collaboration, or real-time notifications                                |
-| `receiving-code-review`          | Receiving code review feedback, before implementing suggestions                                             |
-| `requesting-code-review`         | Completing tasks or before merging to verify work meets requirements                                        |
-| `retention-specialist`           | Improving user retention, reducing churn, analyzing engagement, or re-engagement                            |
-| `saas-architect`                 | Designing multi-tenant SaaS architecture, tenant isolation, or data models                                  |
-| `security-engineer`              | Reviewing app security, handling user data, ensuring GDPR/App Store compliance                              |
-| `seo-specialist`                 | Working on technical SEO, keyword research, on-page optimization, or backlink strategy                      |
-| `solo-founder-ops`               | Managing time, prioritizing features, or running multiple products as a solo founder                        |
-| `subagent-driven-development`    | Executing implementation plans with independent tasks in the current session                                |
-| `subscription-billing`           | Integrating subscription billing, Stripe webhooks, trial logic, or dunning flows                            |
-| `systematic-debugging`           | Debugging any issue                                                                                         |
-| `test-driven-development`        | Implementing any feature or bugfix                                                                          |
-| `using-git-worktrees`            | Starting work on an isolated branch                                                                         |
-| `using-superpowers`              | Starting any conversation — checks for relevant skills                                                      |
-| `ux-designer`                    | Designing UI, wireframes, user research, or information architecture                                        |
-| `verification-before-completion` | Before declaring a fix or task done                                                                         |
-| `writing-plans`                  | Design is approved — breaking work into tasks                                                               |
-| `writing-skills`                 | Creating or editing a skill                                                                                 |
-
----
-
-### The Indie Hacker Journey
-
-44 expansion skills cover the full indie hacker lifecycle — from first idea to sustainable business:
-
-- **Validate:** `idea-validator`, `market-researcher`
-- **Design:** `product-manager`, `ux-designer`, `cto-architect`
-- **Build:** `backend-developer`, `frontend-developer`, `frontend-design`, `mobile-developer`, `mobile-uiux-promax`, `game-developer`, `game-design`, `chrome-extension-developer`, `api-design`, `real-time-features`, `auth-and-identity`, `email-infrastructure`, `saas-architect`, `devops-engineer`, `security-engineer`, `i18n-localization`, `ai-integrated-product`, `micro-saas-builder`
-- **Launch:** `launch-strategist`, `landing-page-builder`, `app-store-optimizer`, `copywriter`
-- **Grow:** `growth-hacker`, `content-marketer`, `seo-specialist`, `conversion-optimizer`, `community-manager`, `influencer-marketer`, `paid-acquisition-specialist`, `retention-specialist`
-- **Revenue:** `monetization-strategist`, `pricing-psychologist`, `subscription-billing`, `bootstrapper-finance`
-- **Operate:** `solo-founder-ops`, `analytics-setup`, `customer-success-manager`, `data-analyst`, `indie-legal`
+| Skill                            | Triggers automatically when...                                                                    |
+| -------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `brainstorming`                  | Adding a feature, building a component, or modifying behavior                                     |
+| `copywriter`                     | Writing landing page copy, app store descriptions, email sequences, or user-facing text           |
+| `dispatching-parallel-agents`    | Facing 2+ independent tasks that can run without shared state                                     |
+| `executing-plans`                | Running a plan step-by-step with checkpoints                                                      |
+| `finishing-a-development-branch` | Implementation is complete and you need to merge / PR / discard                                   |
+| `frontend-design`                | Building web components, pages, or apps with high design quality                                  |
+| `frontend-developer`             | Building web UI, component architecture, or reviewing frontend code                               |
+| `i18n-localization`              | Planning i18n architecture, localizing for new markets, or managing translations                  |
+| `mobile-developer`               | Working on mobile app features, reviewing mobile code, or mobile architecture                     |
+| `mobile-uiux-promax`            | Designing or building mobile app UI for iOS, Android, React Native, Flutter, SwiftUI, or Compose |
+| `product-manager`                | Defining requirements, prioritizing features, planning roadmaps, or validating problems           |
+| `receiving-code-review`          | Receiving code review feedback, before implementing suggestions                                   |
+| `requesting-code-review`         | Completing tasks or before merging to verify work meets requirements                              |
+| `subagent-driven-development`    | Executing implementation plans with independent tasks in the current session                      |
+| `subscription-billing`           | Integrating subscription billing, Stripe webhooks, trial logic, or dunning flows                  |
+| `systematic-debugging`           | Debugging any issue                                                                               |
+| `test-driven-development`        | Implementing any feature or bugfix                                                                |
+| `using-git-worktrees`            | Starting work on an isolated branch                                                               |
+| `using-superpowers`              | Starting any conversation — checks for relevant skills                                            |
+| `ux-designer`                    | Designing UI, wireframes, user research, or information architecture                              |
+| `verification-before-completion` | Before declaring a fix or task done                                                               |
+| `writing-plans`                  | Design is approved — breaking work into tasks                                                     |
+| `writing-skills`                 | Creating or editing a skill                                                                       |
 
 ---
 
@@ -450,6 +346,7 @@ This setup enforces four core principles across every task:
 - **YAGNI** — Don't build what isn't needed yet
 - **Systematic over ad-hoc** — Follow the skill process, don't guess
 - **Evidence over claims** — Verify before declaring success
+- **Token efficiency** — 23 focused skills instead of 58, optimized for the workflows you actually use
 
 ---
 

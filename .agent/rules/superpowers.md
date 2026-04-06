@@ -37,72 +37,25 @@ All skills are symlinked into `.agent/skills/` and are automatically available.
 
 | Skill | When to Use |
 |---|---|
-| `frontend-developer` | Web UI, component architecture, React/Vue/Svelte/Vanilla. Has `react-rules/` (66 Vercel rules) and `vue-rules/` (44 antfu rules) |
-| `backend-developer` | APIs, server-side logic, database schemas |
-| `mobile-developer` | Mobile apps — React Native, Flutter, iOS, Android. Has `react-native-rules/` (38), `flutter-rules/` (8), `android-rules/` (17), `ios-rules/` (19) |
-| `game-developer` | Mobile game features, architecture decisions |
-| `game-design` | Game mechanics, core loops, progression, monetization |
-| `cto-architect` | System design, tech debt, scaling, architecture |
-| `saas-architect` | Multi-tenant SaaS architecture, tenant isolation |
-| `devops-engineer` | CI/CD, infrastructure, deployment, monitoring |
-| `security-engineer` | App security, auth, GDPR, security audits |
-| `frontend-design` | Web components, pages, artifacts — high design quality, avoids generic AI aesthetics |
+| `frontend-developer` | Web UI, component architecture, React/Vue/Svelte/Vanilla |
+| `mobile-developer` | Mobile apps — React Native, Flutter, iOS, Android |
+| `frontend-design` | Web components, pages, artifacts — high design quality |
 | `mobile-uiux-promax` | Mobile app UI for iOS, Android, React Native, Flutter, SwiftUI, Compose |
-| `rust-developer` | Rust code, ownership/borrow errors, async patterns, idiomatic Rust |
 
-### Business & Growth
+### Product & Design
 
 | Skill | When to Use |
 |---|---|
 | `product-manager` | Product requirements, feature prioritization, roadmap |
-| `data-analyst` | Metrics, funnels, cohort analysis, A/B tests |
-| `growth-hacker` | User acquisition, viral loops, activation funnels |
-| `monetization-strategist` | Pricing, freemium, IAP, unit economics |
-| `conversion-optimizer` | Landing pages, trial-to-paid, onboarding, CRO |
-| `retention-specialist` | Onboarding flows, churn reduction, re-engagement |
-| `customer-success-manager` | User support, feedback loops, NPS/CSAT |
-| `app-store-optimizer` | ASO, keyword strategy, screenshots, ratings |
 | `ux-designer` | UI design, wireframes, user research, IA |
 | `copywriter` | Landing copy, app descriptions, email sequences |
-
-### Marketing & Content
-
-| Skill | When to Use |
-|---|---|
-| `content-marketer` | Content strategy, SEO content, social media |
-| `seo-specialist` | Technical SEO, keywords, backlinks, organic search |
-| `community-manager` | Discord, Reddit, Slack community management |
-| `influencer-marketer` | UGC, creator partnerships, affiliate programs |
-| `paid-acquisition-specialist` | Meta Ads, Google Ads, Apple Search Ads, ROAS |
 
 ### Infrastructure & Integration
 
 | Skill | When to Use |
 |---|---|
-| `api-design` | REST/GraphQL APIs, versioning, rate limiting |
-| `auth-and-identity` | Auth, SSO/SAML/OIDC, RBAC, session management |
 | `subscription-billing` | Stripe, IAP, trials, dunning flows |
-| `email-infrastructure` | Transactional email, SPF/DKIM/DMARC, deliverability |
-| `real-time-features` | WebSockets, SSE, live collaboration, presence |
 | `i18n-localization` | Internationalization, translations, localized ASO |
-
-
-### Indie Hacker & Solopreneur
-
-| Skill | When to Use |
-|---|---|
-| `idea-validator` | Validating problems, markets, and distribution channels before building |
-| `market-researcher` | Finding a niche, sizing markets, customer interviews |
-| `chrome-extension-developer` | Building browser extensions (MV3, activeTab, permissions) |
-| `launch-strategist` | Product Hunt, Hacker News, Reddit launches, pre-launch |
-| `landing-page-builder` | High converting page framework, SaaS landing pages |
-| `pricing-psychologist` | Paywalls, pricing tiers, anchoring, LTV/CAC |
-| `bootstrapper-finance` | MRR tracking, runway calculation, when to quit job |
-| `solo-founder-ops` | Time allocation, ICE scoring, automation, burnout |
-| `indie-legal` | Privacy policies, TOS, basic GDPR/CCPA compliance |
-| `analytics-setup` | PostHog/Plausible setup, event taxonomy, core metrics |
-| `ai-integrated-product` | LLM APIs, cost management, prompt engineering |
-| `micro-saas-builder` | Building $1K-$10K MRR highly niched SaaS businesses |
 
 ## How to Read a Skill (Antigravity)
 
