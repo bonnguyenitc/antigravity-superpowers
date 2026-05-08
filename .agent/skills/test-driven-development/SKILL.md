@@ -369,3 +369,19 @@ Otherwise → not TDD
 ```
 
 No exceptions without your human partner's permission.
+
+---
+
+## Behavioral Rules Checklist — Run Before Reporting Implementation Complete
+
+<HARD-GATE>
+After TDD cycle is done, before telling the user the feature is implemented:
+
+- [ ] **Language** — Responding in the user's language?
+- [ ] **Simplicity** — Is this the minimum code that satisfies the tests? No speculative features added?
+- [ ] **Surgical** — Did I touch only the files this feature requires? No unrelated refactoring?
+- [ ] **Git ops** — If committing: checked `auto_commit` in `.agent/config.yml` first?
+- [ ] **Evidence** — Did I actually run all tests and see them pass? Not just "they should pass"?
+
+If any box is unchecked → fix before reporting.
+</HARD-GATE>

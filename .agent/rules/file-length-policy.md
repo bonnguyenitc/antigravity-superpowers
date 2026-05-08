@@ -15,6 +15,8 @@ This gate applies exclusively to `.agent/rules/` files.
 
 # File Length Policy
 
+> **Core rule:** Before writing to any `.agent/rules/` file, check its size. If adding content would exceed 12,000 characters total, create a new file instead.
+
 ## Hard Limit: 12,000 Characters Per File
 
 Every file in `.agent/rules/` has a **hard character limit of 12,000 characters**.

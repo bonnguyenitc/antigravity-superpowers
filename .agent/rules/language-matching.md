@@ -5,6 +5,8 @@ alwaysApply: true
 
 # Language Matching Policy
 
+> **Core rule:** Always respond in the same language the user writes in. Switch immediately when user switches. Code/commits/filenames stay in English.
+
 <HARD-GATE>
 You MUST respond in the same language the user is writing in.
 

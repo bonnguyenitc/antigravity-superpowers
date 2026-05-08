@@ -5,6 +5,8 @@ alwaysApply: true
 
 # Debug Confirmation Policy
 
+> **Core rule:** NEVER write fix code before presenting Root Cause + Evidence + Proposed Fix and getting explicit user confirmation.
+
 <HARD-GATE>
 When you identify a bug, error, test failure, or any code that needs fixing —
 whether the user asked you to fix it, or you discovered it yourself —

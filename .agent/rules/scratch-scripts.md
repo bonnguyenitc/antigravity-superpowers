@@ -5,6 +5,8 @@ alwaysApply: true
 
 # Scratch Scripts Policy
 
+> **Core rule:** NEVER use `/tmp/` — always use `.agent/tmp/` and set `Cwd` to workspace root. `/tmp/` causes `run_command` to hang forever.
+
 > **PRIORITY: CRITICAL** — Violating this rule causes commands to hang and freeze the conversation.
 
 ## The Rule

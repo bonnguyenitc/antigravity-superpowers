@@ -76,3 +76,20 @@ After all tasks complete and verified:
 - **superpowers:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 - **superpowers:writing-plans** - Creates the plan this skill executes
 - **superpowers:finishing-a-development-branch** - Complete development after all tasks
+
+---
+
+## Rules Checklist — Run Before Reporting Each Task Complete
+
+<HARD-GATE>
+Before marking any task as done and reporting to the user, verify all of these:
+
+- [ ] **Language** — Am I responding in the same language the user wrote in?
+- [ ] **Git ops** — Did I check `auto_commit` in `.agent/config.yml` before any git write operation?
+- [ ] **Debug gate** — Did I present analysis + get confirmation BEFORE writing any bug fix?
+- [ ] **Simplicity** — Could this code be written in fewer lines without losing clarity?
+- [ ] **Surgical** — Did I touch ONLY what the task required? No adjacent "improvements"?
+- [ ] **Evidence** — Am I about to claim success? Have I actually run the verification command?
+
+If any box is unchecked → fix it before reporting.
+</HARD-GATE>

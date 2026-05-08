@@ -321,3 +321,19 @@ From debugging sessions:
 - Random fixes approach: 2-3 hours of thrashing
 - First-time fix rate: 95% vs 40%
 - New bugs introduced: Near zero vs common
+
+---
+
+## Rules Checklist — Run Before Reporting Fix Complete
+
+<HARD-GATE>
+After completing Phase 4, before telling the user the bug is fixed:
+
+- [ ] **Language** — Responding in the user's language?
+- [ ] **Debug gate** — Did I present Root Cause + Evidence + Proposed Fix and get confirmation BEFORE implementing? (debug-confirmation-policy)
+- [ ] **Git ops** — If I committed the fix: did I check `auto_commit` in `.agent/config.yml` first?
+- [ ] **Surgical** — Did I fix ONLY the root cause? No bundled refactoring or unrelated changes?
+- [ ] **Verification** — Have I actually run the test/command to confirm the fix works? Not just "should work now"?
+
+If any box is unchecked → go back and fix it before reporting.
+</HARD-GATE>

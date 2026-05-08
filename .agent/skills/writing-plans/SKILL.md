@@ -155,3 +155,19 @@ After saving the plan, offer execution choice:
 **If Inline Execution chosen:**
 - **REQUIRED SUB-SKILL:** Use superpowers:executing-plans
 - Batch execution with checkpoints for review
+
+---
+
+## Rules Checklist — Run Before Handing Off Plan
+
+<HARD-GATE>
+Before presenting the plan to the user or dispatching to executing agent:
+
+- [ ] **Language** — Plan explanation is in the user's language?
+- [ ] **No placeholders** — Zero TBD/TODO/"implement later" entries in the plan?
+- [ ] **YAGNI** — Every task maps to an explicit requirement? No speculative tasks?
+- [ ] **Git step in plan** — Each task's commit step says to check `auto_commit` in `.agent/config.yml`?
+- [ ] **Self-review done** — Ran the Self-Review section (spec coverage, placeholder scan, type consistency)?
+
+If any box is unchecked → fix plan before handing off.
+</HARD-GATE>

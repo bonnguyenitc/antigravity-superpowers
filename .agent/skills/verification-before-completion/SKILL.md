@@ -137,3 +137,25 @@ From 24 failure memories:
 Run the command. Read the output. THEN claim the result.
 
 This is non-negotiable.
+
+---
+
+## Behavioral Rules Final Check — The Last Gate Before Responding
+
+<HARD-GATE>
+This is the final checkpoint. Before sending your response to the user:
+
+**Technical verification (above):**
+- [ ] Ran the verification command — not "should pass", actual output seen
+- [ ] Exit code / test count / build result confirms the claim
+
+**Behavioral rules (don't forget these during implementation):**
+- [ ] **Language** — Response is in the user's language?
+- [ ] **Debug gate** — If this was a bug fix: did I get confirmation before implementing? (debug-confirmation-policy)
+- [ ] **Git ops** — Any git write op: checked `auto_commit` in `.agent/config.yml`?
+- [ ] **Simplicity** — No features beyond what was asked? No speculative abstractions?
+- [ ] **Surgical** — Changed only what was necessary? No "while I'm here" edits?
+
+All boxes checked? → Send response.
+Any box unchecked? → Fix it first.
+</HARD-GATE>

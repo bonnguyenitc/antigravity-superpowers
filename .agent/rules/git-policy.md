@@ -1,4 +1,11 @@
+---
+description: Git write operations — check auto_commit before any git write command
+alwaysApply: true
+---
+
 # Git Policy
+
+> **Core rule:** Before ANY git write operation, read `.agent/config.yml` — if `auto_commit: false`, skip the operation and print "Skipping git operation (auto_commit: false)."
 
 <HARD-GATE>
 Before running ANY git write operation — git add, git commit, git push,

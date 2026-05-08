@@ -5,12 +5,16 @@ alwaysApply: true
 
 # Superpowers Skills Integration
 
+> **Core rule:** Before any implementation/debugging/planning action, check if a skill applies and read its SKILL.md. Skip only for trivial factual questions with zero implementation.
+
 This workspace uses the **Superpowers** skills library located in `superpowers/skills/`.
 All skills are symlinked into `.agent/skills/` and are automatically available.
 
 ## Core Rule: Check Skills Before Acting
 
 **Before any response or action**, check if a relevant skill applies. If there's even a 1% chance a skill applies, read it via `view_file` on its `SKILL.md` and follow it exactly.
+
+**Exception (per CLAUDE.md §1):** Skip the skill check for trivial tasks — simple factual questions, one-line answers, or requests that clearly involve zero implementation (e.g., "what does X mean?", "how do I spell Y?"). If in doubt, check anyway.
 
 ## Available Skills
 
